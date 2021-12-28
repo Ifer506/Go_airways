@@ -4,164 +4,196 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class FlightDetails extends JFrame implements ActionListener {
-    // Changing image size
-    ImageIcon icon1 = new ImageIcon("C:/Users/dell/Downloads/search.png/");
-    Image scaleImage1 = icon1.getImage().getScaledInstance(50, 20,Image.SCALE_DEFAULT);
-    // 1st Row
-    ImageIcon icon = new ImageIcon("Screenshot (3).png");
-    Image scaleImage = icon.getImage().getScaledInstance(255, 257,Image.SCALE_DEFAULT);
-    ImageIcon icon2 = new ImageIcon("5625.jpg");
-    Image scaleImage2 = icon2.getImage().getScaledInstance(255, 257,Image.SCALE_DEFAULT);
-    ImageIcon icon3 = new ImageIcon("55358.jpg");
-    Image scaleImage3 = icon3.getImage().getScaledInstance(255, 257,Image.SCALE_DEFAULT);
-    ImageIcon icon4 = new ImageIcon("59467.jpg");
-    Image scaleImage4 = icon4.getImage().getScaledInstance(255, 257,Image.SCALE_DEFAULT);
-    ImageIcon icon5 = new ImageIcon("67552.jpg");
-    Image scaleImage5 = icon5.getImage().getScaledInstance(255, 257,Image.SCALE_DEFAULT);
-    // 2nd Row
-    ImageIcon icon6 = new ImageIcon("93586.jpg");
-    Image scaleImage6 = icon6.getImage().getScaledInstance(255, 257,Image.SCALE_DEFAULT);
-    ImageIcon icon7 = new ImageIcon("98407.jpg");
-    Image scaleImage7 = icon7.getImage().getScaledInstance(255, 257,Image.SCALE_DEFAULT);
-    ImageIcon icon8 = new ImageIcon("251276.jpg");
-    Image scaleImage8 = icon8.getImage().getScaledInstance(255, 257,Image.SCALE_DEFAULT);
-    ImageIcon icon9 = new ImageIcon("765769.jpg");
-    Image scaleImage9 = icon9.getImage().getScaledInstance(255, 257,Image.SCALE_DEFAULT);
-    ImageIcon icon10 = new ImageIcon("1545103.jpg");
-    Image scaleImage10 = icon10.getImage().getScaledInstance(255, 257,Image.SCALE_DEFAULT);
+    String[] array = {"10:01", "10:10", "01:01"};
+    int i=1;
 
-    JButton back = new JButton("BACK");
-    JButton searchb = new JButton(new ImageIcon(scaleImage1));
-    JButton image0 = new JButton(new ImageIcon(scaleImage));
-    JButton image1 = new JButton(new ImageIcon(scaleImage5));
-    JButton image2 = new JButton(new ImageIcon(scaleImage2));
-    JButton image3 = new JButton(new ImageIcon(scaleImage3));
-    JButton image4 = new JButton(new ImageIcon(scaleImage4));
-    JButton image5 = new JButton(new ImageIcon(scaleImage6));
-    JButton image6 = new JButton(new ImageIcon(scaleImage7));
-    JButton image7 = new JButton(new ImageIcon(scaleImage8));
-    JButton image8 = new JButton(new ImageIcon(scaleImage9));
-    JButton image9 = new JButton(new ImageIcon(scaleImage10));
-    JTextField search = new JTextField();
-    JLabel fd = new JLabel("Flight Details");
-    JLabel click = new JLabel("(Click on pictures to view details)");
-    JLabel contact = new JLabel("For more Information, Call:- +977 9810101010 OR E-mail:- FMS10@email.com");
+    // Resizing and initializing images
+    ImageIcon icon = new ImageIcon("search.png");
+    Image scaleImage = icon.getImage().getScaledInstance(20,20,Image.SCALE_DEFAULT);
 
+    JButton back = new JButton("←");
+    JButton search = new JButton(new ImageIcon(scaleImage));
+    JButton left = new JButton("‹");
+    JButton right = new JButton("›");
+    JButton ticket = new JButton("---");
+    JButton flight = new JButton("---");
+    JButton flight0 = new JButton("---");
+
+    JLabel GA = new JLabel("Go Airways");
+    JLabel from0 = new JLabel("From");
+    JLabel to0 = new JLabel("To");
+    JLabel from = new JLabel("");
+    JLabel to = new JLabel("");
+    JLabel depDate = new JLabel("Dep Date             -          On Way");
+    JLabel traveller = new JLabel("Traveller");
+    JLabel noFlights = new JLabel("");
+    JLabel flightNo = new JLabel("Flight Number");
+    JLabel depTime = new JLabel("Departure Time");
+    JLabel arrTime = new JLabel("Arrival Time");
+    JLabel duration = new JLabel("Duration");
+    JLabel chFare = new JLabel("Choose Fare");
+    JLabel FN = new JLabel("---");
+    JLabel DT = new JLabel("---");
+    JLabel AT = new JLabel("---");
+    JLabel D = new JLabel("---");
+    JLabel error = new JLabel("");
+    JLabel bagg = new JLabel("Baggage");
+    JLabel haCarry = new JLabel("Hand Carry");
+    JLabel _class = new JLabel("A Class");
+
+    JTextField fBox = new JTextField();
+    JTextField toBox = new JTextField();
+    JTextField ddBox = new JTextField();
+    JTextField dBox = new JTextField();
+    JTextField tBox = new JTextField();
 
     public FlightDetails(){
-        setTitle("Flight Details");
-        setLayout(null);
-        // setBounds(-5,0,1290,723);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        getContentPane().setBackground(new Color(255,255,255));
-        // To start the window maximized
+        // setIconImage(scaleImage);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        searchb.addActionListener(this);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLayout(null);
+
         back.addActionListener(this);
-        image0.addActionListener(this);
-        image1.addActionListener(this);
-        image2.addActionListener(this);
-        image3.addActionListener(this);
-        image4.addActionListener(this);
-        image5.addActionListener(this);
-        image6.addActionListener(this);
-        image7.addActionListener(this);
-        image8.addActionListener(this);
-        image9.addActionListener(this);
+        search.addActionListener(this);
+        left.addActionListener(this);
+        right.addActionListener(this);
+        ticket.addActionListener(this);
 
-        fd.setFont(new Font("Times", Font.BOLD, 25));
-        contact.setFont(new Font("Times", Font.BOLD, 20));
-        search.setFont(new Font("Times", Font.BOLD, 20));
+        GA.setFont(new Font("Times",Font.BOLD, 30));
+        from0.setFont(new Font("Times",Font.BOLD, 20));
+        to0.setFont(new Font("Times",Font.BOLD, 20));
+        depDate.setFont(new Font("Times",Font.BOLD, 20));
+        traveller.setFont(new Font("Times",Font.BOLD, 20));
+        fBox.setFont(new Font("Times",Font.PLAIN, 20));
+        toBox.setFont(new Font("Times",Font.PLAIN, 20));
+        ddBox.setFont(new Font("Times",Font.PLAIN, 20));
+        dBox.setFont(new Font("Times",Font.PLAIN, 20));
+        tBox.setFont(new Font("Times",Font.PLAIN, 20));
+        from.setFont(new Font("Times",Font.BOLD, 20));
+        noFlights.setFont(new Font("Times",Font.BOLD, 20));
+        to.setFont(new Font("Times",Font.BOLD, 20));
+        left.setFont(new Font("Times",Font.BOLD, 50));
+        flight.setFont(new Font("Times",Font.BOLD, 20));
+        flight0.setFont(new Font("Times",Font.BOLD, 20));
+        right.setFont(new Font("Times",Font.BOLD, 50));
+        flightNo.setFont(new Font("Times",Font.BOLD, 20));
+        depTime.setFont(new Font("Times",Font.BOLD, 20));
+        arrTime.setFont(new Font("Times",Font.BOLD, 20));
+        duration.setFont(new Font("Times",Font.BOLD, 20));
+        chFare.setFont(new Font("Times",Font.BOLD, 20));
+        FN.setFont(new Font("Times",Font.PLAIN, 20));
+        DT.setFont(new Font("Times",Font.PLAIN, 20));
+        AT.setFont(new Font("Times",Font.PLAIN, 20));
+        D.setFont(new Font("Times",Font.PLAIN, 20));
+        ticket.setFont(new Font("Times",Font.PLAIN, 20));
+        error.setFont(new Font("Times",Font.BOLD, 10));
+        error.setForeground(Color.red);
 
-        back.setBounds(5,5,69,20);
-        search.setBounds(1100,100,150,40);
-        searchb.setBounds(1060,100,40,40);
-        image0.setBounds(3,150,250,257);
-        image1.setBounds(258,150,250,257);
-        image2.setBounds(514,150,250,257);
-        image3.setBounds(769,150,250,257);
-        image4.setBounds(1027,150,250,257);
-        image5.setBounds(3,410,250,257);
-        image6.setBounds(258,410,250,257);
-        image7.setBounds(514,410,250,257);
-        image9.setBounds(769,410,250,257);
-        image8.setBounds(1027,410,250,257);
-        fd.setBounds(550,10,500,40);
-        contact.setBounds(268,664,750,40);
-        click.setBounds(540,130,200,20);
+        back.setBounds(10,10,45,20);
+        GA.setBounds(100,20,200,45);
 
+        from0.setBounds(150,150,100,25);
+        to0.setBounds(350,150,50,25);
+        depDate.setBounds(550,150,300,25);
+        traveller.setBounds(950,150,100,25);
+
+        fBox.setBounds(150,180,150,25);
+        toBox.setBounds(350,180,150,25);
+        ddBox.setBounds(550,180,150,25);
+        dBox.setBounds(750,180,150,25);
+        tBox.setBounds(950,180,150,25);
+        search.setBounds(600,205,50,25);
+        error.setBounds(580,232,100,20);
+
+        from.setBounds(350,300,150,25);
+        noFlights.setBounds(550,300,150,25);
+        to.setBounds(750,300,150,25);
+
+        left.setBounds(350,350,80,80);
+        flight.setBounds(450,360,150,50);
+        flight0.setBounds(610,360,150,50);
+        right.setBounds(785,350,80,80);
+
+        flightNo.setBounds(210,500,150,25);
+        depTime.setBounds(400,500,150,25);
+        arrTime.setBounds(600,500,150,25);
+        duration.setBounds(780,500,150,25);
+        chFare.setBounds(910,500,150,25);
+
+        FN.setBounds(220,550,80,20);
+        DT.setBounds(410,550,80,20);
+        AT.setBounds(610,550,80,20);
+        D.setBounds(790,550,80,20);
+        ticket.setBounds(920,550,80,20);
+
+        add(GA);
         add(back);
+        add(from);
+        add(to);
+        add(from0);
+        add(to0);
+        add(depDate);
+        add(traveller);
+        add(fBox);
+        add(ddBox);
+        add(tBox);
+        add(toBox);
+        add(dBox);
+        add(flight);
+        add(left);
+        add(noFlights);
+        add(flight0);
+        add(depTime);
+        add(flightNo);
+        add(right);
+        add(arrTime);
+        add(duration);
+        add(chFare);
+        add(FN);
+        add(DT);
+        add(AT);
+        add(D);
+        add(ticket);
         add(search);
-        add(searchb);
-        add(image0);
-        add(image1);
-        add(image2);
-        add(image3);
-        add(image4);
-        add(image5);
-        add(image6);
-        add(image7);
-        add(image8);
-        add(image9);
-        add(fd);
-        add(contact);
-        add(click);
+        add(error);
     }
     public void actionPerformed(ActionEvent a){
-        if(a.getSource()==back){
+        if (a.getSource() == search){
+            System.out.print(fBox.getText());
+            if (tBox.getText()=="ktm"){
+                error.setText("(Plese fill all the text fields)");
+            }
+            else{
+                to.setText(toBox.getText());
+                from.setText(fBox.getText());
+                noFlights.setText("10 Flights");
+                flight.setText(array[i-1]);
+                flight0.setText(array[i]);
+                FN.setText("LM10");
+                DT.setText("10:01");
+                AT.setText("10:10");
+                D.setText("09 min");
+                ticket.setText("1010");
+            }
+        }
+        if (a.getSource() == back){
             dispose();
         }
-        if(a.getSource()==searchb){
-            String entered = search.getText();
-            if (entered.length() == 0){
-                search.setFont(new Font("Times", Font.ITALIC, 10));
-                search.setForeground(Color.red);
-                search.setText("Please, Enter a valid keyword");
-            }
-            System.out.println(entered);
+        // left and right doesn't work
+        if (a.getSource() == right){
+            i+=1;
+            flight.setText(array[i-1]);
+            flight0.setText(array[i]);
         }
-        if(a.getSource()==image0){
-            String time = "10:10";
-            JOptionPane.showMessageDialog(null,"Time:- "+time);
+        if (a.getSource() == left){
+            i-=1;
+            flight.setText(array[i-1]);
+            flight.setText(array[i]);
         }
-        if(a.getSource()==image1){
-            String time = "10:10";
-            JOptionPane.showMessageDialog(null,"Time:- "+time);
-        }
-        if(a.getSource()==image2){
-            String time = "10:10";
-            JOptionPane.showMessageDialog(null,"Time:- "+time);
-        }
-        if(a.getSource()==image3){
-            String time = "10:10";
-            JOptionPane.showMessageDialog(null,"Time:- "+time);
-        }
-        if(a.getSource()==image4){
-            String time = "10:10";
-            JOptionPane.showMessageDialog(null,"Time:- "+time);
-        }
-        if(a.getSource()==image5){
-            String time = "10:10";
-            JOptionPane.showMessageDialog(null,"Time:- "+time);
-        }
-        if(a.getSource()==image6){
-            String time = "10:10";
-            JOptionPane.showMessageDialog(null,"Time:- "+time);
-        }
-        if(a.getSource()==image7){
-            String time = "10:10";
-            JOptionPane.showMessageDialog(null,"Time:- "+time);
-        }
-        if(a.getSource()==image8){
-            String time = "10:10";
-            JOptionPane.showMessageDialog(null,"Time:- "+time);
-        }
-        if(a.getSource()==image9){
-            String time = "10:10";
-            JOptionPane.showMessageDialog(null,"Time:- "+time);
+        if (a.getSource()==ticket){
+            JOptionPane.showMessageDialog(null, bagg,"More Info", JOptionPane.DEFAULT_OPTION);
         }
     }
-
     public static void main(String[] args) {
         new FlightDetails().setVisible(true);
     }
