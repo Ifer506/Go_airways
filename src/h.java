@@ -111,14 +111,14 @@ class h extends JFrame implements ItemListener
         add(i7);
 
 
-        r1.setBounds(350, 240, 20, 13);
+        r1.setBounds(350, 260, 20, 13);
         r1.setSelected(true);
         r1.addItemListener(this);
         add(r1);
-        r2.setBounds(370, 240, 20, 13);
+        r2.setBounds(370, 260, 20, 13);
         r2.addItemListener(this);
         add(r2);
-        r3.setBounds(390, 240, 20, 13);
+        r3.setBounds(390, 260, 20, 13);
         r3.addItemListener(this);
         add(r3);
 
