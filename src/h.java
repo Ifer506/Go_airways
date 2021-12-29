@@ -16,6 +16,7 @@ class h extends JFrame implements ItemListener
     JLabel b = new JLabel("From");
     JLabel c = new JLabel("To");
     JLabel d = new JLabel("Nationality");
+    JButton i = new JButton("Search Flight");
 
     JLabel i1 = new JLabel(new ImageIcon("1.jpg"));
     JLabel i4 = new JLabel(new ImageIcon("4.jpg"));
@@ -25,7 +26,7 @@ class h extends JFrame implements ItemListener
 
     JLabel e = new JLabel("Get To Know Us");
     JLabel f = new JLabel("Legal Policies");
-    JLabel g = new JLabel("Contact");
+    JLabel g = new JLabel("Contact Us");
     JLabel h = new JLabel("Follow Us");
 
     JRadioButton r1 = new JRadioButton();
@@ -79,10 +80,11 @@ class h extends JFrame implements ItemListener
         e.setFont(new Font("serif", Font.BOLD, 20));
         f.setBounds(201, 515, 117, 40);
         f.setFont(new Font("serif", Font.BOLD, 20));
-        g.setBounds(401, 515, 67, 40);
+        g.setBounds(401, 515, 94, 40);
         g.setFont(new Font("serif", Font.BOLD, 20));
         h.setBounds(601, 515, 82, 40);
         h.setFont(new Font("serif", Font.BOLD, 20));
+        i.setBounds(301, 300, 110, 20);
 
         i1.setBounds(100, 50, 550, 200);
         add(i1);
@@ -119,6 +121,7 @@ class h extends JFrame implements ItemListener
         add(f);
         add(g);
         add(h);
+        add(i);
 
         // adding a comboBox
         String [] fromCities = {"Kathmandu", "Bhadrapur", "Bhairahawa", "Bharatpur", "Biratnagar", "Dhangadhi"};
