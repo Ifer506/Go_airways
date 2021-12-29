@@ -75,29 +75,42 @@ class h extends JFrame implements ItemListener
 
         a.setBounds(0, 0, 156, 40);
         a.setFont(new Font("serif", Font.BOLD, 30));
+        add(a);
         b.setBounds(0, 265, 156, 40);
         b.setFont(new Font("serif", Font.BOLD, 20));
+        add(b);
         c.setBounds(101, 265, 156, 40);
         c.setFont(new Font("serif", Font.BOLD, 20));
+        add(c);
         d.setBounds(201, 265, 156, 40);
         d.setFont(new Font("serif", Font.BOLD, 20));
+        add(d);
         e.setBounds(1, 515, 141, 40);
         e.setFont(new Font("serif", Font.BOLD, 20));
+        add(e);
         f.setBounds(201, 515, 117, 40);
         f.setFont(new Font("serif", Font.BOLD, 20));
+        add(f);
         g.setBounds(401, 515, 94, 40);
         g.setFont(new Font("serif", Font.BOLD, 20));
+        add(g);
         h.setBounds(601, 515, 82, 40);
         h.setFont(new Font("serif", Font.BOLD, 20));
+        add(h);
         i.setBounds(301, 300, 110, 20);
+        add(i);
         j.setBounds(1, 540, 82, 40);
         j.setFont(new Font("serif", Font.PLAIN, 15));
+        add(j);
         k.setBounds(1, 570, 82, 40);
         k.setFont(new Font("serif", Font.PLAIN, 15));
+        add(k);
         l.setBounds(1, 600, 82, 40);
         l.setFont(new Font("serif", Font.PLAIN, 15));
+        add(l);
         m.setBounds(401, 550, 120, 140);
         m.setFont(new Font("serif", Font.PLAIN, 15));
+        add(m);
 
         i1.setBounds(100, 50, 550, 200);
         add(i1);
@@ -110,35 +123,24 @@ class h extends JFrame implements ItemListener
         i7.setBounds(830, 340, 300, 170);
         add(i7);
 
-
         r1.setBounds(350, 260, 20, 13);
+        r1.setBackground(Color.pink);
         r1.setSelected(true);
         r1.addItemListener(this);
         add(r1);
+        bg.add(r1);
+
         r2.setBounds(370, 260, 20, 13);
+        r2.setBackground(Color.pink);
         r2.addItemListener(this);
         add(r2);
+        bg.add(r2);
+
         r3.setBounds(390, 260, 20, 13);
+        r3.setBackground(Color.pink);
         r3.addItemListener(this);
         add(r3);
-
-        bg.add(r1);
-        bg.add(r2);
         bg.add(r3);
-
-        add(a);
-        add(b);
-        add(c);
-        add(d);
-        add(e);
-        add(f);
-        add(g);
-        add(h);
-        add(i);
-        add(j);
-        add(k);
-        add(l);
-        add(m);
 
         // adding a comboBox
         String [] fromCities = {"Kathmandu", "Bhadrapur", "Bhairahawa", "Bharatpur", "Biratnagar", "Dhangadhi"};
