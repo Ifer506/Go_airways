@@ -28,6 +28,11 @@ class h extends JFrame implements ItemListener
     JLabel f = new JLabel("Legal Policies");
     JLabel g = new JLabel("Contact Us");
     JLabel h = new JLabel("Follow Us");
+    JLabel j = new JLabel("About Us");
+    JLabel k = new JLabel("Careers");
+    JLabel l = new JLabel("FAQ");
+    JLabel m = new JLabel("<html> Reservation: <br> +977 1 1234567  <br> Online Reservation: <br> +977 1 2345678, +977 1 3456789 <br> Email: abcd@gmail.com </html>");
+
 
     JRadioButton r1 = new JRadioButton();
     JRadioButton r2 = new JRadioButton();
@@ -85,6 +90,14 @@ class h extends JFrame implements ItemListener
         h.setBounds(601, 515, 82, 40);
         h.setFont(new Font("serif", Font.BOLD, 20));
         i.setBounds(301, 300, 110, 20);
+        j.setBounds(1, 540, 82, 40);
+        j.setFont(new Font("serif", Font.PLAIN, 15));
+        k.setBounds(1, 570, 82, 40);
+        k.setFont(new Font("serif", Font.PLAIN, 15));
+        l.setBounds(1, 600, 82, 40);
+        l.setFont(new Font("serif", Font.PLAIN, 15));
+        m.setBounds(401, 550, 120, 140);
+        m.setFont(new Font("serif", Font.PLAIN, 15));
 
         i1.setBounds(100, 50, 550, 200);
         add(i1);
@@ -122,6 +135,10 @@ class h extends JFrame implements ItemListener
         add(g);
         add(h);
         add(i);
+        add(j);
+        add(k);
+        add(l);
+        add(m);
 
         // adding a comboBox
         String [] fromCities = {"Kathmandu", "Bhadrapur", "Bhairahawa", "Bharatpur", "Biratnagar", "Dhangadhi"};
