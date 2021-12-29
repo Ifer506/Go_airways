@@ -49,30 +49,33 @@ class h extends JFrame implements ItemListener
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
+        // for menu bar
         mb = new JMenuBar();
         add(mb);
 
+        // for menu item
         mi = new JMenuItem();
         add(mi);
 
+        // menu bar
         fi = new JMenu("Flight Information");
-        fr = new JMenu("Flight Routes");
-        c19 = new JMenu("Covid - 19");
-        au = new JMenu("About Us");
-
         mb.add(fi);
+        fr = new JMenu("Flight Routes");
         mb.add(fr);
+        c19 = new JMenu("Covid - 19");
         mb.add(c19);
+        au = new JMenu("About Us");
         mb.add(au);
 
+        // menu bar items
         aa = new JMenuItem("Flight Status");
-        ab = new JMenuItem("Ticket Status");
-
         fi.add(aa);
+        ab = new JMenuItem("Ticket Status");
         fi.add(ab);
 
         setJMenuBar(mb);
 
+        // placing labels
         a.setBounds(0, 0, 156, 40);
         a.setFont(new Font("serif", Font.BOLD, 30));
         add(a);
@@ -112,8 +115,11 @@ class h extends JFrame implements ItemListener
         m.setFont(new Font("serif", Font.PLAIN, 15));
         add(m);
 
+        // placing image for the slideshow
         i1.setBounds(100, 50, 550, 200);
         add(i1);
+
+        // placing images
         i4.setBounds(1, 340, 200, 170);
         add(i4);
         i5.setBounds(200, 340, 300, 170);
@@ -123,6 +129,7 @@ class h extends JFrame implements ItemListener
         i7.setBounds(830, 340, 300, 170);
         add(i7);
 
+        // placing radio buttons
         r1.setBounds(350, 260, 20, 13);
         r1.setBackground(Color.pink);
         r1.setSelected(true);
@@ -149,18 +156,19 @@ class h extends JFrame implements ItemListener
 
         JComboBox <String> comboBox1= new JComboBox < > (fromCities);
         comboBox1.setBounds(1, 300, 100, 20);
+        add(comboBox1);
 
         JComboBox <String> comboBox2= new JComboBox < > (toCities);
         comboBox2.setBounds(101, 300, 100, 20);
+        add(comboBox2);
 
         JComboBox <String> comboBox3= new JComboBox < > (nationality);
         comboBox3.setBounds(201, 300, 100, 20);
-
-        add(comboBox1);
-        add(comboBox2);
         add(comboBox3);
+
     }
 
+    // to change images by clicking on the radio buttons
     public void itemStateChanged(ItemEvent e)
     {
         if (r1.isSelected())
