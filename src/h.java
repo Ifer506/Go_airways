@@ -32,7 +32,7 @@ class h extends JFrame implements ItemListener
     JLabel k = new JLabel("Careers");
     JLabel l = new JLabel("FAQ");
     JLabel m = new JLabel("<html> Reservation: <br> +977 1 1234567  <br> Online Reservation: <br> +977 1 2345678, +977 1 3456789 <br> Email: abcd@gmail.com </html>");
-
+    JLabel n = new JLabel("Popular Destinations");
 
     JRadioButton r1 = new JRadioButton();
     JRadioButton r2 = new JRadioButton();
@@ -114,19 +114,22 @@ class h extends JFrame implements ItemListener
         m.setBounds(401, 550, 120, 140);
         m.setFont(new Font("serif", Font.PLAIN, 15));
         add(m);
+        n.setBounds(535, 270, 174, 140);
+        n.setFont(new Font("serif", Font.BOLD, 20));
+        add(n);
 
         // placing image for the slideshow
         i1.setBounds(100, 50, 550, 200);
         add(i1);
 
         // placing images
-        i4.setBounds(1, 340, 200, 170);
+        i4.setBounds(1, 370, 200, 150);
         add(i4);
-        i5.setBounds(200, 340, 300, 170);
+        i5.setBounds(200, 370, 300, 150);
         add(i5);
-        i6.setBounds(515, 340, 300, 170);
+        i6.setBounds(515, 370, 300, 150);
         add(i6);
-        i7.setBounds(830, 340, 300, 170);
+        i7.setBounds(830, 370, 300, 150);
         add(i7);
 
         // placing radio buttons
