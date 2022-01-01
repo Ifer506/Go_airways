@@ -9,15 +9,18 @@ public class FlightDetails extends JFrame implements ActionListener {
 
     // Resizing and initializing images
     ImageIcon icon = new ImageIcon("search.png");
-    Image scaleImage = icon.getImage().getScaledInstance(20,20,Image.SCALE_DEFAULT);
+    Image scaleImage = icon.getImage().getScaledInstance(50,25,Image.SCALE_DEFAULT);
+
+    ImageIcon img = new ImageIcon("airplane.png");
+    Image scaleImage0 = img.getImage().getScaledInstance(2500,2500,Image.SCALE_DEFAULT);
 
     JButton back = new JButton("←");
     JButton search = new JButton(new ImageIcon(scaleImage));
     JButton left = new JButton("‹");
     JButton right = new JButton("›");
-    JButton ticket = new JButton("---");
-    JButton flight = new JButton("---");
-    JButton flight0 = new JButton("---");
+    JButton ticket = new JButton("");
+    JButton flight = new JButton("");
+    JButton flight0 = new JButton("");
 
     JLabel GA = new JLabel("Go Airways");
     JLabel from0 = new JLabel("From");
@@ -32,11 +35,11 @@ public class FlightDetails extends JFrame implements ActionListener {
     JLabel arrTime = new JLabel("Arrival Time");
     JLabel duration = new JLabel("Duration");
     JLabel chFare = new JLabel("Choose Fare");
-    JLabel FN = new JLabel("---");
-    JLabel DT = new JLabel("---");
-    JLabel AT = new JLabel("---");
-    JLabel D = new JLabel("---");
-    JLabel error = new JLabel("");
+    JLabel FN = new JLabel("");
+    JLabel DT = new JLabel("");
+    JLabel AT = new JLabel("");
+    JLabel D = new JLabel("");
+    JLabel error = new JLabel("(Plese fill all the text fields)");
     JLabel bagg = new JLabel("Baggage");
     JLabel haCarry = new JLabel("Hand Carry");
     JLabel _class = new JLabel("A Class");
@@ -52,6 +55,7 @@ public class FlightDetails extends JFrame implements ActionListener {
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(null);
+        setIconImage(scaleImage0);
 
         back.addActionListener(this);
         search.addActionListener(this);
@@ -103,11 +107,11 @@ public class FlightDetails extends JFrame implements ActionListener {
         dBox.setBounds(750,180,150,25);
         tBox.setBounds(950,180,150,25);
         search.setBounds(600,205,50,25);
-        error.setBounds(580,232,100,20);
+        error.setBounds(560,232,140,20);
 
         from.setBounds(350,300,150,25);
         noFlights.setBounds(550,300,150,25);
-        to.setBounds(750,300,150,25);
+        to.setBounds(790,300,150,25);
 
         left.setBounds(350,350,80,80);
         flight.setBounds(450,360,150,50);
@@ -156,14 +160,33 @@ public class FlightDetails extends JFrame implements ActionListener {
         add(ticket);
         add(search);
         add(error);
+
+        ticket.setVisible(false);
+        error.setVisible(false);
+        D.setVisible(false);
+        AT.setVisible(false);
+        DT.setVisible(false);
+        FN.setVisible(false);
+        flight0.setVisible(false);
+        flight.setVisible(false);
+        noFlights.setVisible(false);
+        from.setVisible(false);
+        to.setVisible(false);
+        left.setVisible(false);
+        right.setVisible(false);
+        flightNo.setVisible(false);
+        depTime.setVisible(false);
+        arrTime.setVisible(false);
+        duration.setVisible(false);
+        chFare.setVisible(false);
     }
     public void actionPerformed(ActionEvent a){
         if (a.getSource() == search){
-            System.out.print(fBox.getText());
-            if (tBox.getText()=="ktm"){
-                error.setText("(Plese fill all the text fields)");
+            if (fBox.getText().equals("") ||tBox.getText().equals("") || toBox.getText().equals("") || ddBox.getText().equals("") || dBox.getText().equals("")){
+                error.setVisible(true);
             }
             else{
+                error.setVisible(false);
                 to.setText(toBox.getText());
                 from.setText(fBox.getText());
                 noFlights.setText("10 Flights");
@@ -174,6 +197,24 @@ public class FlightDetails extends JFrame implements ActionListener {
                 AT.setText("10:10");
                 D.setText("09 min");
                 ticket.setText("1010");
+
+                ticket.setVisible(true);
+                D.setVisible(true);
+                AT.setVisible(true);
+                DT.setVisible(true);
+                FN.setVisible(true);
+                flight0.setVisible(true);
+                flight.setVisible(true);
+                noFlights.setVisible(true);
+                from.setVisible(true);
+                to.setVisible(true);
+                left.setVisible(true);
+                right.setVisible(true);
+                flightNo.setVisible(true);
+                depTime.setVisible(true);
+                arrTime.setVisible(true);
+                duration.setVisible(true);
+                chFare.setVisible(true);
             }
         }
         if (a.getSource() == back){
