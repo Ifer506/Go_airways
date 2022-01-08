@@ -6,16 +6,20 @@ import java.awt.event.ActionListener;
 public class FlightDetails extends JFrame implements ActionListener {
     String[] array = {"10:01", "10:10", "01:01"};
     int i=1;
+    String [] cities = {"Kathmandu", "Bhadrapur", "Bhairahawa", "Bharatpur", "Biratnagar", "Dhangadhi"};
+    String [] travellers = {"1","2","3","4","5"};
+    JComboBox <String> fBox = new JComboBox < > (cities);
+    JComboBox <String> toBox = new JComboBox < > (cities);
+    JComboBox <String> tBox = new JComboBox < > (travellers);
 
     // Resizing and initializing images
     ImageIcon icon = new ImageIcon("search.png");
-    Image scaleImage = icon.getImage().getScaledInstance(50,25,Image.SCALE_DEFAULT);
 
     ImageIcon img = new ImageIcon("airplane.png");
     Image scaleImage0 = img.getImage().getScaledInstance(2500,2500,Image.SCALE_DEFAULT);
 
     JButton back = new JButton("←");
-    JButton search = new JButton(new ImageIcon(scaleImage));
+    JButton search = new JButton("SEARCH");
     JButton left = new JButton("‹");
     JButton right = new JButton("›");
     JButton ticket = new JButton("");
@@ -39,21 +43,24 @@ public class FlightDetails extends JFrame implements ActionListener {
     JLabel DT = new JLabel("");
     JLabel AT = new JLabel("");
     JLabel D = new JLabel("");
-    JLabel error = new JLabel("(Plese fill all the text fields)");
-    JLabel bagg = new JLabel("Baggage");
+    JLabel error = new JLabel("");
+    String weight = "15";
+    String time = "10:10";
+    JLabel bagg = new JLabel("<html>Max. Baggage:-15 <br> Time:- 10:10</html>");
     JLabel haCarry = new JLabel("Hand Carry");
     JLabel _class = new JLabel("A Class");
 
-    JTextField fBox = new JTextField();
-    JTextField toBox = new JTextField();
+    // JTextField fBox = new JTextField();
+    // JTextField toBox = new JTextField();
     JTextField ddBox = new JTextField();
     JTextField dBox = new JTextField();
-    JTextField tBox = new JTextField();
+    // JTextField tBox = new JTextField();
 
     public FlightDetails(){
         // setIconImage(scaleImage);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        getContentPane().setBackground(new Color(0,0,150));
         setLayout(null);
         setIconImage(scaleImage0);
 
@@ -64,34 +71,95 @@ public class FlightDetails extends JFrame implements ActionListener {
         ticket.addActionListener(this);
 
         GA.setFont(new Font("Times",Font.BOLD, 30));
+        GA.setForeground(new Color(0,200,200));
         from0.setFont(new Font("Times",Font.BOLD, 20));
+        from0.setForeground(new Color(0,200,200));
         to0.setFont(new Font("Times",Font.BOLD, 20));
+        to0.setForeground(new Color(0,200,200));
         depDate.setFont(new Font("Times",Font.BOLD, 20));
+        depDate.setForeground(new Color(0,200,200));
         traveller.setFont(new Font("Times",Font.BOLD, 20));
+        traveller.setForeground(new Color(0,200,200));
         fBox.setFont(new Font("Times",Font.PLAIN, 20));
+        fBox.setForeground(new Color(0, 163, 108));
+        fBox.setBackground(new Color(159,226,191));
         toBox.setFont(new Font("Times",Font.PLAIN, 20));
+        toBox.setForeground(new Color(0, 163, 108));
+        toBox.setBackground(new Color(159,226,191));
         ddBox.setFont(new Font("Times",Font.PLAIN, 20));
+        ddBox.setForeground(new Color(0, 163, 108));
+        ddBox.setBackground(new Color(159,226,191));
         dBox.setFont(new Font("Times",Font.PLAIN, 20));
+        dBox.setForeground(new Color(0, 163, 108));
+        dBox.setBackground(new Color(159,226,191));
         tBox.setFont(new Font("Times",Font.PLAIN, 20));
+        tBox.setForeground(new Color(0, 163, 108));
+        tBox.setBackground(new Color(159,226,191));
         from.setFont(new Font("Times",Font.BOLD, 20));
+        from.setForeground(new Color(0,200,200));
         noFlights.setFont(new Font("Times",Font.BOLD, 20));
+        noFlights.setForeground(new Color(0,200,200));
         to.setFont(new Font("Times",Font.BOLD, 20));
+        to.setForeground(new Color(0,200,200));
         left.setFont(new Font("Times",Font.BOLD, 50));
+        left.setForeground(new Color(0,128,128));
         flight.setFont(new Font("Times",Font.BOLD, 20));
+        flight.setForeground(new Color(0,128,128));
         flight0.setFont(new Font("Times",Font.BOLD, 20));
+        flight0.setForeground(new Color(0,128,128));
         right.setFont(new Font("Times",Font.BOLD, 50));
+        right.setForeground(new Color(0,200,200));
         flightNo.setFont(new Font("Times",Font.BOLD, 20));
+        flightNo.setForeground(new Color(0,200,200));
         depTime.setFont(new Font("Times",Font.BOLD, 20));
+        depTime.setForeground(new Color(0,200,200));
         arrTime.setFont(new Font("Times",Font.BOLD, 20));
+        arrTime.setForeground(new Color(0,200,200));
         duration.setFont(new Font("Times",Font.BOLD, 20));
+        duration.setForeground(new Color(0,200,200));
         chFare.setFont(new Font("Times",Font.BOLD, 20));
+        chFare.setForeground(new Color(0,200,200));
         FN.setFont(new Font("Times",Font.PLAIN, 20));
+        FN.setForeground(Color.white);
         DT.setFont(new Font("Times",Font.PLAIN, 20));
+        DT.setForeground(Color.white);
         AT.setFont(new Font("Times",Font.PLAIN, 20));
+        AT.setForeground(Color.white);
         D.setFont(new Font("Times",Font.PLAIN, 20));
+        D.setForeground(Color.white);
         ticket.setFont(new Font("Times",Font.PLAIN, 20));
+        ticket.setForeground(Color.white);
         error.setFont(new Font("Times",Font.BOLD, 10));
         error.setForeground(Color.red);
+        
+        back.setForeground(new Color(128,0,0));
+        back.setBackground(new Color(255, 229, 180));
+        search.setForeground(new Color(128,0,0));
+        search.setBackground(new Color(255, 229, 180));
+        left.setForeground(new Color(128,0,0));
+        left.setBackground(new Color(255, 229, 180));
+        right.setForeground(new Color(128,0,0));
+        right.setBackground(new Color(255, 229, 180));
+        ticket.setForeground(new Color(128,0,0));
+        ticket.setBackground(new Color(255, 229, 180));
+        flight.setForeground(new Color(128,0,0));
+        flight.setBackground(new Color(255, 229, 180));
+        flight0.setForeground(new Color(128,0,0));
+        flight0.setBackground(new Color(255, 229, 180));
+
+
+        left.setFocusable(false);
+        right.setFocusable(false);
+        ticket.setFocusable(false);
+        flight.setFocusable(false);
+        flight0.setFocusable(false);
+        search.setFocusable(false);
+        back.setFocusable(false);
+
+        left.setBorder(BorderFactory.createEtchedBorder());
+        right.setBorder(BorderFactory.createEtchedBorder());
+        ticket.setBorder(BorderFactory.createEtchedBorder());
+        search.setBorder(BorderFactory.createEtchedBorder());
 
         back.setBounds(10,10,45,20);
         GA.setBounds(100,20,200,45);
@@ -106,7 +174,7 @@ public class FlightDetails extends JFrame implements ActionListener {
         ddBox.setBounds(550,180,150,25);
         dBox.setBounds(750,180,150,25);
         tBox.setBounds(950,180,150,25);
-        search.setBounds(600,205,50,25);
+        search.setBounds(590,205,60,25);
         error.setBounds(560,232,140,20);
 
         from.setBounds(350,300,150,25);
@@ -162,7 +230,6 @@ public class FlightDetails extends JFrame implements ActionListener {
         add(error);
 
         ticket.setVisible(false);
-        error.setVisible(false);
         D.setVisible(false);
         AT.setVisible(false);
         DT.setVisible(false);
@@ -179,16 +246,26 @@ public class FlightDetails extends JFrame implements ActionListener {
         arrTime.setVisible(false);
         duration.setVisible(false);
         chFare.setVisible(false);
+
+        // getSetText gst = new getSetText();
+        // System.out.print(gst.getc0());
+        // fBox.setText(gst.getc0());
+        // toBox.setText(gst.getc1());
+        // fBox.setText(gst.getc2());
     }
     public void actionPerformed(ActionEvent a){
         if (a.getSource() == search){
-            if (fBox.getText().equals("") ||tBox.getText().equals("") || toBox.getText().equals("") || ddBox.getText().equals("") || dBox.getText().equals("")){
-                error.setVisible(true);
+            if (ddBox.getText().equals("") || dBox.getText().equals("")){
+                error.setText("(Plese fill all the blank fields)");
+            }
+            else if(toBox.getSelectedItem().toString()==fBox.getSelectedItem().toString()){
+                error.setBounds(525,232,230,20);
+                error.setText("(Departure and Arrival places must be different)");
             }
             else{
                 error.setVisible(false);
-                to.setText(toBox.getText());
-                from.setText(fBox.getText());
+                to.setText(toBox.getSelectedItem().toString());
+                from.setText(fBox.getSelectedItem().toString());
                 noFlights.setText("10 Flights");
                 flight.setText(array[i-1]);
                 flight0.setText(array[i]);
@@ -218,6 +295,7 @@ public class FlightDetails extends JFrame implements ActionListener {
             }
         }
         if (a.getSource() == back){
+            // new HomePage().setVisible(true);
             dispose();
         }
         // left and right doesn't work
@@ -232,11 +310,10 @@ public class FlightDetails extends JFrame implements ActionListener {
             flight.setText(array[i]);
         }
         if (a.getSource()==ticket){
-            JOptionPane.showMessageDialog(null, bagg,"More Info", JOptionPane.DEFAULT_OPTION);
+            JOptionPane.showMessageDialog(null, bagg,"Information", JOptionPane.DEFAULT_OPTION);
         }
     }
     public static void main(String[] args) {
         new FlightDetails().setVisible(true);
     }
 }
-
