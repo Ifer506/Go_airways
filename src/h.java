@@ -11,12 +11,12 @@ import javax.swing.JComboBox;
 
 class h extends JFrame implements ItemListener
 {
-    private final String text = "Instagram";
-    private final JLabel hyperlink = new JLabel(new ImageIcon("Instagram.png"));
-    private final String text1 = "Facebook";
-    private final JLabel hyperlink1 = new JLabel(new ImageIcon("Facebook.png"));
-    private final String text2 = "Reddit";
-    private final JLabel hyperlink2 = new JLabel(new ImageIcon("Reddit.png"));
+    private final String instagramText = "Instagram";
+    private final JLabel instagramHyperlink = new JLabel(new ImageIcon("Instagram.png"));
+    private final String facebookText = "Facebook";
+    private final JLabel facebookHyperlink = new JLabel(new ImageIcon("Facebook.png"));
+    private final String redditText = "Reddit";
+    private final JLabel redditHyperlink = new JLabel(new ImageIcon("Reddit.png"));
 
     JMenuBar mb;
     JMenu fi, fr, c19, au;
@@ -59,14 +59,14 @@ class h extends JFrame implements ItemListener
     {
         super();
 
-        hyperlink.setForeground(Color.BLUE.darker());
-        hyperlink.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        hyperlink1.setForeground(Color.BLUE.darker());
-        hyperlink1.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        hyperlink2.setForeground(Color.BLUE.darker());
-        hyperlink2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        instagramHyperlink.setForeground(Color.BLUE.darker());
+        instagramHyperlink.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        facebookHyperlink.setForeground(Color.BLUE.darker());
+        facebookHyperlink.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        redditHyperlink.setForeground(Color.BLUE.darker());
+        redditHyperlink.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-        hyperlink.addMouseListener(new MouseAdapter()
+        instagramHyperlink.addMouseListener(new MouseAdapter()
                                    {
 
                                        @Override
@@ -85,19 +85,19 @@ class h extends JFrame implements ItemListener
                                        @Override
                                        public void mouseExited(MouseEvent e)
                                        {
-                                           hyperlink.setText(text);
+                                           instagramHyperlink.setText(instagramText);
                                        }
 
                                        @Override
                                        public void mouseEntered(MouseEvent e)
                                        {
-                                           hyperlink.setText("<html> <a href = '' >" + text + "</a </html>");
+                                           instagramHyperlink.setText("<html> <a href = '' >" + instagramText + "</a </html>");
                                        }
 
                                    }
         );
 
-        hyperlink1.addMouseListener(new MouseAdapter()
+        facebookHyperlink.addMouseListener(new MouseAdapter()
                                    {
 
                                        @Override
@@ -116,19 +116,19 @@ class h extends JFrame implements ItemListener
                                        @Override
                                        public void mouseExited(MouseEvent e)
                                        {
-                                           hyperlink1.setText(text1);
+                                           facebookHyperlink.setText(facebookText);
                                        }
 
                                        @Override
                                        public void mouseEntered(MouseEvent e)
                                        {
-                                           hyperlink1.setText("<html> <a href = '' >" + text1 + "</a> </html>");
+                                           facebookHyperlink.setText("<html> <a href = '' >" + facebookText + "</a> </html>");
                                        }
 
                                    }
         );
 
-        hyperlink2.addMouseListener(new MouseAdapter()
+        redditHyperlink.addMouseListener(new MouseAdapter()
                                     {
 
                                         @Override
@@ -147,25 +147,25 @@ class h extends JFrame implements ItemListener
                                         @Override
                                         public void mouseExited(MouseEvent e)
                                         {
-                                            hyperlink2.setText(text2);
+                                            redditHyperlink.setText(redditText);
                                         }
 
                                         @Override
                                         public void mouseEntered(MouseEvent e)
                                         {
-                                            hyperlink2.setText("<html> <a href = '' >" + text2 + "</a> </html>");
+                                            redditHyperlink.setText("<html> <a href = '' >" + redditText + "</a> </html>");
                                         }
 
                                     }
         );
 
 
-        hyperlink.setBounds(601, 540, 94, 40);
-        add(hyperlink);
-        hyperlink1.setBounds(601, 570, 91, 40);
-        add(hyperlink1);
-        hyperlink2.setBounds(597, 603, 80, 40);
-        add(hyperlink2);
+        instagramHyperlink.setBounds(601, 540, 94, 40);
+        add(instagramHyperlink);
+        facebookHyperlink.setBounds(601, 570, 91, 40);
+        add(facebookHyperlink);
+        redditHyperlink.setBounds(597, 603, 80, 40);
+        add(redditHyperlink);
 
         setBounds(0, 0, 1366, 768);
         setTitle("Home");
