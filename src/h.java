@@ -75,7 +75,7 @@ class h extends JFrame implements ItemListener
                                        {
                                            try
                                            {
-                                               Desktop.getDesktop().browse(new URI("https://www.facebook.com/AvinavBhatta/"));
+                                               Desktop.getDesktop().browse(new URI("https://www.instagram.com/hoaxn_/"));
                                            }
                                            catch (IOException | URISyntaxException e1)
                                            {
@@ -106,7 +106,7 @@ class h extends JFrame implements ItemListener
                                        {
                                            try
                                            {
-                                               Desktop.getDesktop().browse(new URI("https://www.instagram.com/hoaxn_/"));
+                                               Desktop.getDesktop().browse(new URI("https://www.facebook.com/AvinavBhatta/"));
                                            }
                                            catch (IOException | URISyntaxException e1)
                                            {
@@ -161,13 +161,13 @@ class h extends JFrame implements ItemListener
         );
 
         // placing hyperlinks
-        instagramHyperlink.setBounds(601, 540, 94, 40);
+        instagramHyperlink.setBounds(401, 540, 94, 40);
         add(instagramHyperlink);
 
-        facebookHyperlink.setBounds(601, 570, 91, 40);
+        facebookHyperlink.setBounds(401, 570, 91, 40);
         add(facebookHyperlink);
 
-        redditHyperlink.setBounds(597, 603, 80, 40);
+        redditHyperlink.setBounds(397, 603, 80, 40);
         add(redditHyperlink);
 
         // frame
@@ -225,11 +225,11 @@ class h extends JFrame implements ItemListener
         footerHeading1.setFont(new Font("serif", Font.BOLD, 20));
         add(footerHeading1);
 
-        footerHeading2.setBounds(401, 515, 94, 40);
+        footerHeading2.setBounds(201, 515, 94, 40);
         footerHeading2.setFont(new Font("serif", Font.BOLD, 20));
         add(footerHeading2);
 
-        footerHeading3.setBounds(601, 515, 82, 40);
+        footerHeading3.setBounds(401, 515, 82, 40);
         footerHeading3.setFont(new Font("serif", Font.BOLD, 20));
         add(footerHeading3);
 
@@ -248,7 +248,7 @@ class h extends JFrame implements ItemListener
         footerHeading1Content3.setFont(new Font("serif", Font.PLAIN, 15));
         add(footerHeading1Content3);
 
-        footerHeading2Content.setBounds(401, 550, 120, 140);
+        footerHeading2Content.setBounds(201, 550, 120, 140);
         footerHeading2Content.setFont(new Font("serif", Font.PLAIN, 15));
         add(footerHeading2Content);
 
