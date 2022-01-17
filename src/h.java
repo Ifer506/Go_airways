@@ -25,21 +25,25 @@ class h extends JFrame implements ItemListener
     JMenuItem aa, ab;
 
     JLabel heading = new JLabel("GO Airways");
+
+    JButton img1 = new JButton(new ImageIcon("Login.png"));
+
+    JLabel img2 = new JLabel(new ImageIcon("1.jpg"));
+    JRadioButton r1 = new JRadioButton();
+    JRadioButton r2 = new JRadioButton();
+    JRadioButton r3 = new JRadioButton();
+    ButtonGroup bg = new ButtonGroup();
+
     JLabel from = new JLabel("From");
     JLabel to = new JLabel("To");
     JLabel nationality = new JLabel("Nationality");
-
     JButton searchButton = new JButton("Search Flight");
 
-    JLabel img1 = new JLabel(new ImageIcon("1.jpg"));
-
     JLabel body = new JLabel("Popular Destinations");
-    JLabel img2 = new JLabel(new ImageIcon("4.jpg"));
-    JLabel img3 = new JLabel(new ImageIcon("5.jpg"));
-    JLabel img4 = new JLabel(new ImageIcon("6.jpg"));
-    JLabel img5 = new JLabel(new ImageIcon("7.jpg"));
-
-    JButton img6 = new JButton(new ImageIcon("Login.png"));
+    JLabel img3 = new JLabel(new ImageIcon("4.jpg"));
+    JLabel img4 = new JLabel(new ImageIcon("5.jpg"));
+    JLabel img5 = new JLabel(new ImageIcon("6.jpg"));
+    JLabel img6 = new JLabel(new ImageIcon("7.jpg"));
 
     JLabel footerHeading1 = new JLabel("Get To Know Us");
     JLabel footerHeading1Content1 = new JLabel("About Us");
@@ -49,20 +53,17 @@ class h extends JFrame implements ItemListener
     JLabel footerHeading2Content = new JLabel("<html> Reservation: <br> +977 1 1234567  <br> Online Reservation: <br> +977 1 2345678, +977 1 3456789 <br> Email: abcd@gmail.com </html>");
     JLabel footerHeading3 = new JLabel("Follow Us");
 
-    JRadioButton r1 = new JRadioButton();
-    JRadioButton r2 = new JRadioButton();
-    JRadioButton r3 = new JRadioButton();
-
-    ButtonGroup bg = new ButtonGroup();
-
     public h() throws HeadlessException
     {
+        // creating hyperlinks
         super();
 
         instagramHyperlink.setForeground(Color.BLUE.darker());
-        instagramHyperlink.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        instagramHyperlink.setCursor(new Cursor(Cursor.HAND_CURSOR)); // to change the cursor shape to a hand
+
         facebookHyperlink.setForeground(Color.BLUE.darker());
         facebookHyperlink.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
         redditHyperlink.setForeground(Color.BLUE.darker());
         redditHyperlink.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
@@ -159,14 +160,17 @@ class h extends JFrame implements ItemListener
                                     }
         );
 
-
+        // placing hyperlinks
         instagramHyperlink.setBounds(601, 540, 94, 40);
         add(instagramHyperlink);
+
         facebookHyperlink.setBounds(601, 570, 91, 40);
         add(facebookHyperlink);
+
         redditHyperlink.setBounds(597, 603, 80, 40);
         add(redditHyperlink);
 
+        // frame
         setBounds(0, 0, 1366, 768);
         setTitle("Home");
         getContentPane().setBackground(Color.pink);
@@ -204,58 +208,75 @@ class h extends JFrame implements ItemListener
         heading.setBounds(0, 0, 156, 40);
         heading.setFont(new Font("serif", Font.BOLD, 30));
         add(heading);
+
         from.setBounds(0, 265, 156, 40);
         from.setFont(new Font("serif", Font.BOLD, 20));
         add(from);
+
         to.setBounds(101, 265, 156, 40);
         to.setFont(new Font("serif", Font.BOLD, 20));
         add(to);
+
         nationality.setBounds(201, 265, 156, 40);
         nationality.setFont(new Font("serif", Font.BOLD, 20));
         add(nationality);
+
         footerHeading1.setBounds(1, 515, 141, 40);
         footerHeading1.setFont(new Font("serif", Font.BOLD, 20));
         add(footerHeading1);
+
         footerHeading2.setBounds(401, 515, 94, 40);
         footerHeading2.setFont(new Font("serif", Font.BOLD, 20));
         add(footerHeading2);
+
         footerHeading3.setBounds(601, 515, 82, 40);
         footerHeading3.setFont(new Font("serif", Font.BOLD, 20));
         add(footerHeading3);
+
         searchButton.setBounds(301, 300, 110, 20);
         add(searchButton);
+
         footerHeading1Content1.setBounds(1, 540, 82, 40);
         footerHeading1Content1.setFont(new Font("serif", Font.PLAIN, 15));
         add(footerHeading1Content1);
+
         footerHeading1Content2.setBounds(1, 570, 82, 40);
         footerHeading1Content2.setFont(new Font("serif", Font.PLAIN, 15));
         add(footerHeading1Content2);
+
         footerHeading1Content3.setBounds(1, 600, 82, 40);
         footerHeading1Content3.setFont(new Font("serif", Font.PLAIN, 15));
         add(footerHeading1Content3);
+
         footerHeading2Content.setBounds(401, 550, 120, 140);
         footerHeading2Content.setFont(new Font("serif", Font.PLAIN, 15));
         add(footerHeading2Content);
+
         body.setBounds(535, 270, 174, 140);
         body.setFont(new Font("serif", Font.BOLD, 20));
         add(body);
 
         // placing image for the slideshow
-        img1.setBounds(100, 50, 550, 200);
-        add(img1);
-
-        // placing images
-        img2.setBounds(1, 370, 200, 150);
+        img2.setBounds(100, 50, 550, 200);
         add(img2);
-        img3.setBounds(200, 370, 300, 150);
+
+        // placing images under popular destinations
+        img3.setBounds(1, 370, 200, 150);
         add(img3);
-        img4.setBounds(515, 370, 300, 150);
+
+        img4.setBounds(200, 370, 300, 150);
         add(img4);
-        img5.setBounds(830, 370, 300, 150);
+
+        img5.setBounds(515, 370, 300, 150);
         add(img5);
-        img6.setBounds(1305, 12, 36, 36);
-        img6.setBackground(Color.pink);
+
+        img6.setBounds(830, 370, 300, 150);
         add(img6);
+
+        // placing login icon
+        img1.setBounds(1305, 12, 36, 36);
+        img1.setBackground(Color.pink);
+        add(img1);
 
         // placing radio buttons
         r1.setBounds(350, 260, 20, 13);
@@ -301,15 +322,15 @@ class h extends JFrame implements ItemListener
     {
         if (r1.isSelected())
         {
-            img1.setIcon(new ImageIcon("1.jpg"));
+            img2.setIcon(new ImageIcon("1.jpg"));
         }
         else if (r2.isSelected())
         {
-            img1.setIcon(new ImageIcon("2.jpg"));
+            img2.setIcon(new ImageIcon("2.jpg"));
         }
         else if (r3.isSelected())
         {
-            img1.setIcon(new ImageIcon("3.jpg"));
+            img2.setIcon(new ImageIcon("3.jpg"));
         }
     }
 
