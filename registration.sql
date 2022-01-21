@@ -1,0 +1,1 @@
+SELECT * FROM registration.registration_detail;
