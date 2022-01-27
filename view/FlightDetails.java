@@ -1,8 +1,14 @@
+package view;
+import homepage.Home;
+import model.searchDetails;
 
 import java.awt.Color;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.BorderFactory;
+import javax.swing.JComboBox;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -63,6 +69,36 @@ public class FlightDetails extends javax.swing.JFrame {
         jButton8.setVisible(false);
         jButton1.setBackground(new Color(34,40,44));
         jButton1.setBorder(BorderFactory.createEmptyBorder());
+
+        String from0 = searchDetails.getFrom0();
+        String to0 = searchDetails.getTo0();
+        String ddate = searchDetails.getDdate();
+        String adate = searchDetails.getAdate();
+        String nationality = searchDetails.getNationality();
+        System.out.println(from0);
+        System.out.println(to0);
+        System.out.println(ddate);
+        System.out.println(adate);
+        System.out.println(nationality);
+
+        jComboBox1.setSelectedItem(from0);
+        jComboBox2.setSelectedItem(to0);
+        // jDateChooser1.date(ddate);
+        // jDateChooser2.setDate(adate);
+        jComboBox3.setSelectedItem(nationality);
+        try{
+        String date = ddate;
+        java.util.Date date2 = new SimpleDateFormat("MMM d, y").parse(date);
+        jDateChooser1.setDate(date2);} catch(Exception e){
+            System.out.println(e);
+        }
+        try{
+            String date0 = adate;
+            java.util.Date date1 = new SimpleDateFormat("MMM d, y").parse(date0);
+            jDateChooser2.setDate(date1);} catch(Exception e){
+                System.out.println(e);
+            }
+        
     }
 
     /**
@@ -138,6 +174,11 @@ public class FlightDetails extends javax.swing.JFrame {
         jButton1.setText("Go Airways");
         jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jButton1.setBorderPainted(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(197, 148, 27));
@@ -576,7 +617,8 @@ public class FlightDetails extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
+                       
+ // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -639,6 +681,10 @@ public class FlightDetails extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
     
+        private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        dispose();
+        new Home().setVisible(true);       // TODO add your handling code here:
+    }  
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         dispose();
         new AfterTicket().setVisible(true);        // TODO add your handling code here:
