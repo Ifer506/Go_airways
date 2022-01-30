@@ -25,6 +25,8 @@ nationality varchar(20));
 select * from searchDetails;
 select * from travellers;
 select * from ContactDetails;
+select * from TravellersDetails;
+
 drop table customer;
 drop table travellers;
 drop table TravellersDetails;
