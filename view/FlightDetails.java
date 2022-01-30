@@ -1,6 +1,8 @@
 package view;
-import homepage.Home;
+
 import model.searchDetails;
+import model.travellers;
+import controller.travellersController;
 
 import java.awt.Color;
 import java.text.DateFormat;
@@ -80,12 +82,10 @@ public class FlightDetails extends javax.swing.JFrame {
         System.out.println(ddate);
         System.out.println(adate);
         System.out.println(nationality);
-
         jComboBox1.setSelectedItem(from0);
         jComboBox2.setSelectedItem(to0);
         // jDateChooser1.date(ddate);
         // jDateChooser2.setDate(adate);
-        jComboBox3.setSelectedItem(nationality);
         try{
         String date = ddate;
         java.util.Date date2 = new SimpleDateFormat("MMM d, y").parse(date);
@@ -98,7 +98,6 @@ public class FlightDetails extends javax.swing.JFrame {
             jDateChooser2.setDate(date1);} catch(Exception e){
                 System.out.println(e);
             }
-        
     }
 
     /**
@@ -638,6 +637,8 @@ public class FlightDetails extends javax.swing.JFrame {
                 jLabel6.setText("(Departure and Arrival places must be different)");
             }    
             else{
+                jLabel7.setText(jComboBox1.getSelectedItem().toString());
+                jLabel8.setText(jComboBox2.getSelectedItem().toString());
                 jLabel6.setVisible(false);
                 jLabel7.setVisible(true);
                 jLabel8.setVisible(true);
@@ -681,39 +682,154 @@ public class FlightDetails extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton2ActionPerformed
     
-        private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+        private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         dispose();
         new Home().setVisible(true);       // TODO add your handling code here:
     }  
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        travellersController travellersController;
+        String travel = jComboBox3.getSelectedItem().toString();
+        travellers travell = new travellers(travel); 
+        travellersController = new travellersController();
+        int insert = travellersController.travellers(travell); 
         dispose();
-        new AfterTicket().setVisible(true);        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+
+        if(travel=="1"){
+            new AfterTicket().setVisible(true);
+        }
+        else if(travel == "2"){
+            new AfterTicket1().setVisible(true);
+        }
+        else if (travel =="3"){
+            new AfterTicket2().setVisible(true);
+        }
+        else if (travel=="4"){
+            new AfterTicket3().setVisible(true);
+        }
+        else{
+            new AfterTicket4().setVisible(true);
+        }
+    }
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        travellersController travellersController;
+        String travel = jComboBox3.getSelectedItem().toString();
+        travellers travell = new travellers(travel); 
+        travellersController = new travellersController();
+        int insert = travellersController.travellers(travell); 
+           
         dispose();
-        new AfterTicket().setVisible(true);         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        if(travel=="1"){
+            new AfterTicket().setVisible(true);
+        }
+        else if(travel == "2"){
+            new AfterTicket1().setVisible(true);
+        }
+        else if (travel =="3"){
+            new AfterTicket2().setVisible(true);
+        }
+        else if (travel=="4"){
+            new AfterTicket3().setVisible(true);
+        }
+        else{
+            new AfterTicket4().setVisible(true);
+        }    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        travellersController travellersController;
+        String travel = jComboBox3.getSelectedItem().toString();
+        travellers travell = new travellers(travel); 
+        travellersController = new travellersController();
+        int insert = travellersController.travellers(travell); 
+           
         dispose();
-        new AfterTicket().setVisible(true);         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+        if(travel=="1"){
+            new AfterTicket().setVisible(true);
+        }
+        else if(travel == "2"){
+            new AfterTicket1().setVisible(true);
+        }
+        else if (travel =="3"){
+            new AfterTicket2().setVisible(true);
+        }
+        else if (travel=="4"){
+            new AfterTicket3().setVisible(true);
+        }
+        else{
+            new AfterTicket4().setVisible(true);
+        }    }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        travellersController travellersController;
+        String travel = jComboBox3.getSelectedItem().toString();
+        travellers travell = new travellers(travel); 
+        travellersController = new travellersController();
+        int insert = travellersController.travellers(travell); 
+           
         dispose();
-        new AfterTicket().setVisible(true);         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+        if(travel=="1"){
+            new AfterTicket().setVisible(true);
+        }
+        else if(travel == "2"){
+            new AfterTicket1().setVisible(true);
+        }
+        else if (travel =="3"){
+            new AfterTicket2().setVisible(true);
+        }
+        else if (travel=="4"){
+            new AfterTicket3().setVisible(true);
+        }
+        else{
+            new AfterTicket4().setVisible(true);
+        }    }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        travellersController travellersController;
+        String travel = jComboBox3.getSelectedItem().toString();
+        travellers travell = new travellers(travel); 
+        travellersController = new travellersController();
+        int insert = travellersController.travellers(travell); 
+           
         dispose();
-        new AfterTicket().setVisible(true);         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+        if(travel=="1"){
+            new AfterTicket().setVisible(true);
+        }
+        else if(travel == "2"){
+            new AfterTicket1().setVisible(true);
+        }
+        else if (travel =="3"){
+            new AfterTicket2().setVisible(true);
+        }
+        else if (travel=="4"){
+            new AfterTicket3().setVisible(true);
+        }
+        else{
+            new AfterTicket4().setVisible(true);
+        }    }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        travellersController travellersController;
+        String travel = jComboBox3.getSelectedItem().toString();
+        travellers travell = new travellers(travel); 
+        travellersController = new travellersController();
+        int insert = travellersController.travellers(travell); 
+           
         dispose();
-        new AfterTicket().setVisible(true);         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
+        if(travel=="1"){
+            new AfterTicket().setVisible(true);
+        }
+        else if(travel == "2"){
+            new AfterTicket1().setVisible(true);
+        }
+        else if (travel =="3"){
+            new AfterTicket2().setVisible(true);
+        }
+        else if (travel=="4"){
+            new AfterTicket3().setVisible(true);
+        }
+        else{
+            new AfterTicket4().setVisible(true);
+        }    }//GEN-LAST:event_jButton8ActionPerformed
     
     /**
      * @param args the command line arguments

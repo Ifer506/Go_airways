@@ -590,6 +590,7 @@ public class Home extends javax.swing.JFrame
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        try{
         java.util.Date date = jDateChooser1.getDate();
         String adate = DateFormat.getDateInstance().format(date);
 
@@ -599,25 +600,18 @@ public class Home extends javax.swing.JFrame
         String from0 = jComboBox1.getSelectedItem().toString();
         String to0 = jComboBox2.getSelectedItem().toString();
         String nationality = jComboBox3.getSelectedItem().toString();
-        System.out.println(adate);
-        System.out.println(ddate);
-        System.out.println(from0);
-        System.out.println(to0);
-        System.out.println(nationality);
-        searchDetails searchDetails = new searchDetails(from0, to0, ddate, adate, nationality);
 
+        searchDetails searchDetails = new searchDetails(from0, to0, ddate, adate, nationality);
         searchDetailsController = new searchDetailsController();
         int insert = searchDetailsController.Home(searchDetails);
-        if (insert>0)
-        System.out.println("Successfully Registered");
-        else
-        System.out.println("Failed to Register");   
+        }
+        catch(Exception e){
+            System.out.println("No Error");
+        }
+            dispose();
+            new FlightDetails().setVisible(true);
 
-        dispose();
-        new FlightDetails().setVisible(true);
-
-
-        // TODO add your handling code here:
+ // TODO add your handling code here:
     }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
@@ -665,7 +659,7 @@ public class Home extends javax.swing.JFrame
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    public javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
