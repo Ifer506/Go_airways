@@ -9,6 +9,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 
 
@@ -30,6 +31,7 @@ public class FlightDetails extends javax.swing.JFrame {
         initComponents();
         getContentPane().setBackground(new Color(34,40,44));
         this.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
+
         jLabel6.setVisible(false);
         jLabel7.setVisible(false);
         jLabel8.setVisible(false);

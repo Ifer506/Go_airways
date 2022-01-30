@@ -1,5 +1,7 @@
 package view;
-import java.awt.Color;
+import java.awt.*;
+
+import javax.swing.*;
 
 import controller.ContactDetailsController;
 import controller.travellersController;
@@ -19,7 +21,6 @@ import model.travellersDetails;
  */
 public class AfterTicket4 extends javax.swing.JFrame {
     ContactDetailsController ContactDetailsController;
-
     /**
      * Creates new form AfterTicket
      */
@@ -446,7 +447,7 @@ public class AfterTicket4 extends javax.swing.JFrame {
         travellersDetails td4 = new travellersDetails(fn4, n4);
         travellerDetailsController tc4 = new travellerDetailsController();
         int insert5 = tc4.travellersDetails(td4);
-        // if(travel1==1){
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             
             public void run() {

@@ -278,7 +278,7 @@ public class AfterTicket extends javax.swing.JFrame {
         int insert = ContactDetailsController.ContactDetails(ContactDetails);
         System.out.println(insert);
         
-        String fn = jTextField4.getText();
+        String fn = jTextField5.getText();
         String n = jComboBox1.getSelectedItem().toString();
         travellersDetails td = new travellersDetails(fn,n);
         travellerDetailsController tc = new travellerDetailsController();

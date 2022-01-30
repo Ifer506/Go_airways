@@ -378,11 +378,30 @@ public class AfterTicket3 extends javax.swing.JFrame {
         int insert = ContactDetailsController.ContactDetails(ContactDetails);
         System.out.println(insert);
         
-        String fn = jTextField4.getText();
+        String fn = jTextField5.getText();
+        System.out.println(fn);
         String n = jComboBox1.getSelectedItem().toString();
         travellersDetails td = new travellersDetails(fn,n);
         travellerDetailsController tc = new travellerDetailsController();
         int insert1 = tc.travellersDetails(td);
+
+        String fn1 = jTextField6.getText();
+        String n1 = jComboBox4.getSelectedItem().toString();
+        travellersDetails td1 = new travellersDetails(fn1, n1);
+        travellerDetailsController tc1 = new travellerDetailsController();
+        int insert2 = tc1.travellersDetails(td1);
+
+        String fn2 = jTextField7.getText();
+        String n2 = jComboBox5.getSelectedItem().toString();
+        travellersDetails td2 = new travellersDetails(fn2, n2);
+        travellerDetailsController tc2 = new travellerDetailsController();
+        int insert3 = tc2.travellersDetails(td2);
+
+        String fn3 = jTextField8.getText();
+        String n3 = jComboBox6.getSelectedItem().toString();
+        travellersDetails td3 = new travellersDetails(fn3, n3);
+        travellerDetailsController tc3 = new travellerDetailsController();
+        int insert4 = tc3.travellersDetails(td3);
 
         // if(travel1==1){
         java.awt.EventQueue.invokeLater(new Runnable() {
