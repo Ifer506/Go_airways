@@ -1,15 +1,8 @@
 package view;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
-import controller.searchDetailsController;
-import model.searchDetails;
-
-import javax.swing.*;
-import java.text.DateFormat;
 
 /**
  *
@@ -56,6 +49,8 @@ public class register_gui extends javax.swing.JFrame {
         exit = new com.k33ptoo.components.KButton();
         Lname = new javax.swing.JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        confirm_password2 = new javax.swing.JPasswordField();
+        confirm_password = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(50, 50, 820, 593));
@@ -256,6 +251,22 @@ public class register_gui extends javax.swing.JFrame {
         Lname.setForeground(new java.awt.Color(197, 148, 27));
         Lname.setText("Last name");
 
+        confirm_password2.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        confirm_password2.setForeground(new java.awt.Color(197, 148, 27));
+        confirm_password2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        confirm_password2.setToolTipText("");
+        confirm_password2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(197, 148, 27)));
+        confirm_password2.setOpaque(false);
+        confirm_password2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirm_password2ActionPerformed(evt);
+            }
+        });
+
+        confirm_password.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        confirm_password.setForeground(new java.awt.Color(197, 148, 27));
+        confirm_password.setText("Confirm password");
+
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
@@ -287,16 +298,16 @@ public class register_gui extends javax.swing.JFrame {
                                                 .addGap(240, 240, 240)
                                                 .addComponent(number, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                                .addGap(250, 250, 250)
-                                                .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(10, 10, 10)
-                                                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                                 .addGap(240, 240, 240)
                                                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(number1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(password1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                                                                .addGap(10, 10, 10)
+                                                                .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(10, 10, 10)
+                                                                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                         .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                                                 .addGap(20, 20, 20)
@@ -305,10 +316,13 @@ public class register_gui extends javax.swing.JFrame {
                                                                 .addComponent(female)
                                                                 .addGap(11, 11, 11)
                                                                 .addComponent(other))
-                                                        .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                                                .addGap(76, 76, 76)
-                                                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                                .addGap(2, 2, 2)
+                                                                .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(confirm_password2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(confirm_password, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                                 .addGap(240, 240, 240)
                                                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -349,22 +363,26 @@ public class register_gui extends javax.swing.JFrame {
                                 .addComponent(password)
                                 .addGap(15, 15, 15)
                                 .addComponent(password1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(confirm_password)
+                                .addGap(15, 15, 15)
+                                .addComponent(confirm_password2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(gender)
                                 .addGap(5, 5, 5)
                                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(male)
                                         .addComponent(female)
                                         .addComponent(other))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(dob)
-                                .addGap(8, 8, 8)
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(17, 17, 17)
+                                .addGap(14, 14, 14)
+                                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(dob, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(28, 28, 28)
                                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(59, Short.MAX_VALUE))
+                                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -375,7 +393,9 @@ public class register_gui extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -449,13 +469,16 @@ public class register_gui extends javax.swing.JFrame {
     private void backActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         this.setVisible(false);
-        new Login_frame().setVisible(true);
+//        new Login_frame().setVisible(true);
 
     }
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+    }
 
+    private void confirm_password2ActionPerformed(java.awt.event.ActionEvent evt) {
+        // TODO add your handling code here:
         String gender3="";
         if(male.isSelected())
         {gender3="Male";}
@@ -463,27 +486,6 @@ public class register_gui extends javax.swing.JFrame {
         {gender3 = "Female";}
         else if(other.isSelected())
         {gender3 = "Female";}
-
-
-        if (evt.getSource() == confirm){
-
-            System.out.println(Fname1);
-            if (Fname1.getText().toString() == ""){
-
-            }
-//            if (gender3 == ""){
-//                System.out.println("no gender selected");
-//            }
-
-        }
-//        try{
-//            java.util.Date date = jDateChooser1.getDate();
-//            String adate = DateFormat.getDateInstance().format(date);
-//
-//        }catch(Exception e){
-//            System.out.println("NO ERROR");
-
-
     }
 
     /**
@@ -528,6 +530,8 @@ public class register_gui extends javax.swing.JFrame {
     private javax.swing.JTextField Lname1;
     private com.k33ptoo.components.KButton back;
     private com.k33ptoo.components.KButton confirm;
+    private javax.swing.JLabel confirm_password;
+    private javax.swing.JPasswordField confirm_password2;
     private javax.swing.JLabel dob;
     private javax.swing.JLabel email;
     private javax.swing.JTextField email1;
@@ -547,5 +551,3 @@ public class register_gui extends javax.swing.JFrame {
     private javax.swing.JTextField user_name1;
     // End of variables declaration
 }
-
-
