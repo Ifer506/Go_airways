@@ -93,6 +93,7 @@ public class AddUser extends javax.swing.JFrame
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -199,6 +200,15 @@ public class AddUser extends javax.swing.JFrame
         jTextField5.setBackground(new java.awt.Color(34, 40, 44));
         jTextField5.setForeground(new java.awt.Color(197, 148, 27));
 
+        jButton1.setBackground(new java.awt.Color(34, 40, 44));
+        jButton1.setForeground(new java.awt.Color(197, 148, 27));
+        jButton1.setText("Add User");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlCCenterLayout = new javax.swing.GroupLayout(pnlCCenter);
         pnlCCenter.setLayout(pnlCCenterLayout);
         pnlCCenterLayout.setHorizontalGroup(
@@ -225,6 +235,10 @@ public class AddUser extends javax.swing.JFrame
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(106, 106, 106))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCCenterLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(289, 289, 289))
         );
         pnlCCenterLayout.setVerticalGroup(
             pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,7 +263,9 @@ public class AddUser extends javax.swing.JFrame
                 .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(jButton1)
+                .addContainerGap(156, Short.MAX_VALUE))
         );
 
         pnlCenter.add(pnlCCenter, java.awt.BorderLayout.CENTER);
@@ -276,6 +292,10 @@ public class AddUser extends javax.swing.JFrame
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
     new AdminHome().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -317,6 +337,7 @@ public class AddUser extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
