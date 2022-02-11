@@ -4,8 +4,13 @@
  */
 package homepage;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.JButton;
+import javax.swing.plaf.basic.BasicButtonUI;
 
 /**
  *
@@ -23,6 +28,44 @@ public class CancelFlight extends javax.swing.JFrame
         Toolkit toolkit = getToolkit();
         Dimension  size = toolkit.getScreenSize();
         setLocation(size.width /2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
+        JButton[] btns =  {jButton2};
+        for (JButton btn : btns)
+        {
+            btn.setBackground(new Color(34,40,44));
+            btn.setUI(new BasicButtonUI());
+            btn.addMouseListener(new MouseListener() 
+            {
+                @Override
+                public void mouseClicked(MouseEvent e) 
+                {
+                    
+                }
+
+                @Override
+                public void mousePressed(MouseEvent e) 
+                {
+                    
+                }
+
+                @Override
+                public void mouseReleased(MouseEvent e) 
+                {
+                    
+                }
+
+                @Override
+                public void mouseEntered(MouseEvent e) 
+                {
+                    btn.setBackground(new Color(54, 81, 207));
+                }
+
+                @Override
+                public void mouseExited(MouseEvent e) 
+                {
+                    btn.setBackground(new Color (34,40,44));
+                }
+            });
+        }
     }
 
     /**
@@ -39,6 +82,7 @@ public class CancelFlight extends javax.swing.JFrame
         pnlCenter = new javax.swing.JPanel();
         pnlCTop = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         pnlCCenter = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -61,12 +105,22 @@ public class CancelFlight extends javax.swing.JFrame
         jLabel1.setForeground(new java.awt.Color(197, 148, 27));
         jLabel1.setText("GO AIRWAYS");
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_back_20px.png"))); // NOI18N
+        jButton2.setPreferredSize(new java.awt.Dimension(40, 40));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlCTopLayout = new javax.swing.GroupLayout(pnlCTop);
         pnlCTop.setLayout(pnlCTopLayout);
         pnlCTopLayout.setHorizontalGroup(
             pnlCTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCTopLayout.createSequentialGroup()
-                .addContainerGap(308, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 256, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(291, 291, 291))
         );
@@ -74,8 +128,10 @@ public class CancelFlight extends javax.swing.JFrame
             pnlCTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCTopLayout.createSequentialGroup()
                 .addContainerGap(44, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(22, 22, 22))
+                .addGroup(pnlCTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(16, 16, 16))
         );
 
         pnlCenter.add(pnlCTop, java.awt.BorderLayout.NORTH);
@@ -117,6 +173,10 @@ public class CancelFlight extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    new AdminHome().setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -156,6 +216,7 @@ public class CancelFlight extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
