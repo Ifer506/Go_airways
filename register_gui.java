@@ -4,6 +4,16 @@ package view;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import java.awt.*;
+import java.awt.event.*;
+import java.sql.Date;
+import java.text.DateFormat;
+
+import controller.register_guiController;
+import model.register_guiDetails;
+
+import javax.swing.*;
+
 /**
  *
  * @author Medini
@@ -27,288 +37,288 @@ public class register_gui extends javax.swing.JFrame {
     private void initComponents() {
 
         kGradientPanel1 = new keeptoo.KGradientPanel();
-        password1 = new javax.swing.JPasswordField();
-        Lname1 = new javax.swing.JTextField();
-        heading = new javax.swing.JLabel();
-        Fname = new javax.swing.JLabel();
-        Fname1 = new javax.swing.JTextField();
-        user_name1 = new javax.swing.JTextField();
-        user_name = new javax.swing.JLabel();
-        email1 = new javax.swing.JTextField();
-        email = new javax.swing.JLabel();
-        number1 = new javax.swing.JTextField();
-        number = new javax.swing.JLabel();
-        gender = new javax.swing.JLabel();
-        dob = new javax.swing.JLabel();
-        password = new javax.swing.JLabel();
-        other = new javax.swing.JRadioButton();
-        male = new javax.swing.JRadioButton();
-        female = new javax.swing.JRadioButton();
+        password1 = new JPasswordField();
+        Lname1 = new JTextField();
+        heading = new JLabel();
+        Fname = new JLabel();
+        Fname1 = new JTextField();
+        user_name1 = new JTextField();
+        user_name = new JLabel();
+        email1 = new JTextField();
+        email = new JLabel();
+        number1 = new JTextField();
+        number = new JLabel();
+        gender = new JLabel();
+        dob = new JLabel();
+        password = new JLabel();
+        other = new JRadioButton();
+        male = new JRadioButton();
+        female = new JRadioButton();
         back = new com.k33ptoo.components.KButton();
         confirm = new com.k33ptoo.components.KButton();
         exit = new com.k33ptoo.components.KButton();
-        Lname = new javax.swing.JLabel();
+        Lname = new JLabel();
         jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        confirm_password2 = new javax.swing.JPasswordField();
-        confirm_password = new javax.swing.JLabel();
+        confirm_password2 = new JPasswordField();
+        confirm_password = new JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBounds(new java.awt.Rectangle(50, 50, 820, 593));
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setBounds(new Rectangle(50, 50, 820, 593));
 
-        kGradientPanel1.setkEndColor(new java.awt.Color(255, 255, 255));
-        kGradientPanel1.setkStartColor(new java.awt.Color(255, 255, 255));
+        kGradientPanel1.setkEndColor(new Color(255, 255, 255));
+        kGradientPanel1.setkStartColor(new Color(255, 255, 255));
         kGradientPanel1.setOpaque(false);
-        kGradientPanel1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
+        kGradientPanel1.addMouseMotionListener(new MouseMotionAdapter() {
+            public void mouseDragged(MouseEvent evt) {
                 kGradientPanel1MouseDragged(evt);
             }
         });
-        kGradientPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
+        kGradientPanel1.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent evt) {
                 kGradientPanel1MousePressed(evt);
             }
         });
-        kGradientPanel1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
+        kGradientPanel1.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent evt) {
                 kGradientPanel1KeyPressed(evt);
             }
         });
 
-        password1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        password1.setForeground(new java.awt.Color(197, 148, 27));
-        password1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        password1.setFont(new Font("Calibri", 0, 14)); // NOI18N
+        password1.setForeground(new Color(197, 148, 27));
+        password1.setHorizontalAlignment(JTextField.CENTER);
         password1.setToolTipText("");
-        password1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(197, 148, 27)));
+        password1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, new Color(197, 148, 27)));
         password1.setOpaque(false);
-        password1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        password1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 password1ActionPerformed(evt);
             }
         });
 
-        Lname1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        Lname1.setForeground(new java.awt.Color(197, 148, 27));
-        Lname1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Lname1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(197, 148, 27)));
-        Lname1.setCaretColor(new java.awt.Color(197, 148, 27));
+        Lname1.setFont(new Font("Calibri", 0, 14)); // NOI18N
+        Lname1.setForeground(new Color(197, 148, 27));
+        Lname1.setHorizontalAlignment(JTextField.CENTER);
+        Lname1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, new Color(197, 148, 27)));
+        Lname1.setCaretColor(new Color(197, 148, 27));
         Lname1.setName("Fname"); // NOI18N
         Lname1.setOpaque(false);
-        Lname1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Lname1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 Lname1ActionPerformed(evt);
             }
         });
 
-        heading.setFont(new java.awt.Font("Lucida Handwriting", 0, 36)); // NOI18N
-        heading.setForeground(new java.awt.Color(0, 51, 153));
+        heading.setFont(new Font("Lucida Handwriting", 0, 36)); // NOI18N
+        heading.setForeground(new Color(0, 51, 153));
         heading.setText("REGISTRATION");
 
-        Fname.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        Fname.setForeground(new java.awt.Color(197, 148, 27));
+        Fname.setFont(new Font("Calibri", 1, 12)); // NOI18N
+        Fname.setForeground(new Color(197, 148, 27));
         Fname.setText("First name");
 
-        Fname1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        Fname1.setForeground(new java.awt.Color(197, 148, 27));
-        Fname1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        Fname1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(197, 148, 27)));
-        Fname1.setCaretColor(new java.awt.Color(197, 148, 27));
+        Fname1.setFont(new Font("Calibri", 0, 14)); // NOI18N
+        Fname1.setForeground(new Color(197, 148, 27));
+        Fname1.setHorizontalAlignment(JTextField.CENTER);
+        Fname1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, new Color(197, 148, 27)));
+        Fname1.setCaretColor(new Color(197, 148, 27));
         Fname1.setName("Fname"); // NOI18N
         Fname1.setOpaque(false);
-        Fname1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        Fname1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 Fname1ActionPerformed(evt);
             }
         });
 
-        user_name1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        user_name1.setForeground(new java.awt.Color(197, 148, 27));
-        user_name1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        user_name1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(197, 148, 27)));
-        user_name1.setCaretColor(new java.awt.Color(197, 148, 27));
+        user_name1.setFont(new Font("Calibri", 0, 14)); // NOI18N
+        user_name1.setForeground(new Color(197, 148, 27));
+        user_name1.setHorizontalAlignment(JTextField.CENTER);
+        user_name1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, new Color(197, 148, 27)));
+        user_name1.setCaretColor(new Color(197, 148, 27));
         user_name1.setName("Fname"); // NOI18N
         user_name1.setOpaque(false);
-        user_name1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        user_name1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 user_name1ActionPerformed(evt);
             }
         });
 
-        user_name.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        user_name.setForeground(new java.awt.Color(197, 148, 27));
+        user_name.setFont(new Font("Calibri", 1, 12)); // NOI18N
+        user_name.setForeground(new Color(197, 148, 27));
         user_name.setText("Username");
 
-        email1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        email1.setForeground(new java.awt.Color(197, 148, 27));
-        email1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        email1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(197, 148, 27)));
-        email1.setCaretColor(new java.awt.Color(197, 148, 27));
+        email1.setFont(new Font("Calibri", 0, 14)); // NOI18N
+        email1.setForeground(new Color(197, 148, 27));
+        email1.setHorizontalAlignment(JTextField.CENTER);
+        email1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, new Color(197, 148, 27)));
+        email1.setCaretColor(new Color(197, 148, 27));
         email1.setName("Fname"); // NOI18N
         email1.setOpaque(false);
-        email1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        email1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 email1ActionPerformed(evt);
             }
         });
 
-        email.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        email.setForeground(new java.awt.Color(197, 148, 27));
+        email.setFont(new Font("Calibri", 1, 12)); // NOI18N
+        email.setForeground(new Color(197, 148, 27));
         email.setText("Email");
 
-        number1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        number1.setForeground(new java.awt.Color(197, 148, 27));
-        number1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        number1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(197, 148, 27)));
-        number1.setCaretColor(new java.awt.Color(197, 148, 27));
+        number1.setFont(new Font("Calibri", 0, 14)); // NOI18N
+        number1.setForeground(new Color(197, 148, 27));
+        number1.setHorizontalAlignment(JTextField.CENTER);
+        number1.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, new Color(197, 148, 27)));
+        number1.setCaretColor(new Color(197, 148, 27));
         number1.setName("Fname"); // NOI18N
         number1.setOpaque(false);
-        number1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        number1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 number1ActionPerformed(evt);
             }
         });
 
-        number.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        number.setForeground(new java.awt.Color(197, 148, 27));
+        number.setFont(new Font("Calibri", 1, 12)); // NOI18N
+        number.setForeground(new Color(197, 148, 27));
         number.setText("Phone number");
 
-        gender.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        gender.setForeground(new java.awt.Color(197, 148, 27));
+        gender.setFont(new Font("Calibri", 1, 12)); // NOI18N
+        gender.setForeground(new Color(197, 148, 27));
         gender.setText("Gender");
 
-        dob.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        dob.setForeground(new java.awt.Color(197, 148, 27));
+        dob.setFont(new Font("Calibri", 1, 12)); // NOI18N
+        dob.setForeground(new Color(197, 148, 27));
         dob.setText("Date of birth ");
 
-        password.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        password.setForeground(new java.awt.Color(197, 148, 27));
+        password.setFont(new Font("Calibri", 1, 12)); // NOI18N
+        password.setForeground(new Color(197, 148, 27));
         password.setText("Password");
 
-        other.setForeground(new java.awt.Color(197, 148, 27));
+        other.setForeground(new Color(197, 148, 27));
         other.setSelected(false);
         other.setText("Other");
         other.setOpaque(false);
-        other.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        other.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 otherActionPerformed(evt);
             }
         });
 
-        male.setForeground(new java.awt.Color(197, 148, 27));
+        male.setForeground(new Color(197, 148, 27));
         male.setSelected(false);
         male.setText("Male");
         male.setOpaque(false);
-        male.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        male.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 maleActionPerformed(evt);
             }
         });
 
-        female.setForeground(new java.awt.Color(197, 148, 27));
+        female.setForeground(new Color(197, 148, 27));
         female.setSelected(false);
         female.setText("Female");
         female.setOpaque(false);
-        female.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        female.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 femaleActionPerformed(evt);
             }
         });
 
         back.setText("←");
         back.setkBorderRadius(40);
-        back.setkHoverEndColor(new java.awt.Color(153, 153, 255));
-        back.setkHoverForeGround(new java.awt.Color(197, 148, 27));
-        back.setkHoverStartColor(new java.awt.Color(0, 51, 102));
-        back.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        back.setkHoverEndColor(new Color(153, 153, 255));
+        back.setkHoverForeGround(new Color(197, 148, 27));
+        back.setkHoverStartColor(new Color(0, 51, 102));
+        back.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 backActionPerformed(evt);
             }
         });
 
         confirm.setText("Confirm");
         confirm.setkBorderRadius(20);
-        confirm.setkEndColor(new java.awt.Color(204, 204, 0));
-        confirm.setkHoverEndColor(new java.awt.Color(153, 153, 255));
-        confirm.setkHoverForeGround(new java.awt.Color(197, 148, 27));
-        confirm.setkHoverStartColor(new java.awt.Color(0, 51, 102));
-        confirm.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        confirm.setkEndColor(new Color(204, 204, 0));
+        confirm.setkHoverEndColor(new Color(153, 153, 255));
+        confirm.setkHoverForeGround(new Color(197, 148, 27));
+        confirm.setkHoverStartColor(new Color(0, 51, 102));
+        confirm.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 confirmActionPerformed(evt);
             }
         });
 
         exit.setText("Exit");
         exit.setkBorderRadius(20);
-        exit.setkHoverEndColor(new java.awt.Color(153, 153, 255));
-        exit.setkHoverForeGround(new java.awt.Color(197, 148, 27));
-        exit.setkHoverStartColor(new java.awt.Color(0, 51, 102));
-        exit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        exit.setkHoverEndColor(new Color(153, 153, 255));
+        exit.setkHoverForeGround(new Color(197, 148, 27));
+        exit.setkHoverStartColor(new Color(0, 51, 102));
+        exit.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 exitActionPerformed(evt);
             }
         });
 
-        Lname.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        Lname.setForeground(new java.awt.Color(197, 148, 27));
+        Lname.setFont(new Font("Calibri", 1, 12)); // NOI18N
+        Lname.setForeground(new Color(197, 148, 27));
         Lname.setText("Last name");
 
-        confirm_password2.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        confirm_password2.setForeground(new java.awt.Color(197, 148, 27));
-        confirm_password2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        confirm_password2.setFont(new Font("Calibri", 0, 14)); // NOI18N
+        confirm_password2.setForeground(new Color(197, 148, 27));
+        confirm_password2.setHorizontalAlignment(JTextField.CENTER);
         confirm_password2.setToolTipText("");
-        confirm_password2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(197, 148, 27)));
+        confirm_password2.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, new Color(197, 148, 27)));
         confirm_password2.setOpaque(false);
-        confirm_password2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        confirm_password2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 confirm_password2ActionPerformed(evt);
             }
         });
 
-        confirm_password.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        confirm_password.setForeground(new java.awt.Color(197, 148, 27));
+        confirm_password.setFont(new Font("Calibri", 1, 12)); // NOI18N
+        confirm_password.setForeground(new Color(197, 148, 27));
         confirm_password.setText("Confirm password");
 
-        javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
+        GroupLayout kGradientPanel1Layout = new GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
-                kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                kGradientPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(kGradientPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                                 .addGap(20, 20, 20)
-                                                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(back, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
                                                 .addGap(170, 170, 170)
-                                                .addComponent(heading, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(heading, GroupLayout.PREFERRED_SIZE, 320, GroupLayout.PREFERRED_SIZE))
                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                                 .addGap(240, 240, 240)
-                                                .addComponent(Fname, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(Fname, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                                 .addGap(110, 110, 110)
-                                                .addComponent(Lname, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(Lname, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                                 .addGap(240, 240, 240)
-                                                .addComponent(Fname1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(Fname1, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE)
                                                 .addGap(10, 10, 10)
-                                                .addComponent(Lname1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(Lname1, GroupLayout.PREFERRED_SIZE, 160, GroupLayout.PREFERRED_SIZE))
                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                                 .addGap(240, 240, 240)
-                                                .addComponent(user_name, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(user_name, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                                 .addGap(240, 240, 240)
-                                                .addComponent(email1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(email1, GroupLayout.PREFERRED_SIZE, 330, GroupLayout.PREFERRED_SIZE))
                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                                 .addGap(240, 240, 240)
-                                                .addComponent(number, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(number, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE))
                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                                 .addGap(240, 240, 240)
-                                                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(number1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(password1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(kGradientPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                                        .addComponent(number1, GroupLayout.PREFERRED_SIZE, 330, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(password, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(password1, GroupLayout.PREFERRED_SIZE, 330, GroupLayout.PREFERRED_SIZE)
                                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                                                 .addGap(10, 10, 10)
-                                                                .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(confirm, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
                                                                 .addGap(10, 10, 10)
-                                                                .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(exit, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(gender, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                                                 .addGap(20, 20, 20)
                                                                 .addComponent(male)
@@ -318,83 +328,83 @@ public class register_gui extends javax.swing.JFrame {
                                                                 .addComponent(other))
                                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                                                 .addGap(2, 2, 2)
-                                                                .addComponent(dob, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addComponent(confirm_password2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(confirm_password, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                .addComponent(dob, GroupLayout.PREFERRED_SIZE, 70, GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addComponent(jDateChooser1, GroupLayout.PREFERRED_SIZE, 170, GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(confirm_password2, GroupLayout.PREFERRED_SIZE, 330, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(confirm_password, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)))
                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                                 .addGap(240, 240, 240)
-                                                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(user_name1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addGroup(kGradientPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                                        .addComponent(user_name1, GroupLayout.PREFERRED_SIZE, 330, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(email, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))))
                                 .addContainerGap(293, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
-                kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                kGradientPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                 .addGap(20, 20, 20)
-                                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(kGradientPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addComponent(back, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
                                         .addGroup(kGradientPanel1Layout.createSequentialGroup()
                                                 .addGap(10, 10, 10)
                                                 .addComponent(heading)))
                                 .addGap(30, 30, 30)
-                                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(kGradientPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                         .addComponent(Fname)
                                         .addComponent(Lname))
                                 .addGap(5, 5, 5)
-                                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(Fname1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(Lname1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(kGradientPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addComponent(Fname1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(Lname1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
                                 .addGap(10, 10, 10)
                                 .addComponent(user_name)
                                 .addGap(5, 5, 5)
-                                .addComponent(user_name1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(user_name1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
                                 .addComponent(email)
                                 .addGap(5, 5, 5)
-                                .addComponent(email1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(email1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
                                 .addComponent(number)
                                 .addGap(5, 5, 5)
-                                .addComponent(number1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(number1, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(password)
                                 .addGap(15, 15, 15)
-                                .addComponent(password1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(password1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(confirm_password)
                                 .addGap(15, 15, 15)
-                                .addComponent(confirm_password2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(confirm_password2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(gender)
                                 .addGap(5, 5, 5)
-                                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(kGradientPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                         .addComponent(male)
                                         .addComponent(female)
                                         .addComponent(other))
                                 .addGap(14, 14, 14)
-                                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(dob, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(kGradientPanel1Layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(jDateChooser1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(dob, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(28, 28, 28)
-                                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(kGradientPanel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addComponent(confirm, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(exit, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(kGradientPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(kGradientPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -475,6 +485,35 @@ public class register_gui extends javax.swing.JFrame {
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+        register_guiController register_guiController;
+        String fName = Fname1.getText();
+        String lName = Lname1.getText();
+        String uName = user_name1.getText();
+        String eMail = email1.getText();
+        String pNumber = number1.getText();
+        String password = password1.getText();
+        String cPassword = confirm_password2.getText();
+        String gender="";
+        if(male.isSelected())
+        {gender="Male";}
+        else if(female.isSelected())
+        {gender = "Female";}
+        else if(other.isSelected())
+        {gender = "Others";}
+        java.util.Date date = jDateChooser1.getDate();
+        String date1 = DateFormat.getDateInstance().format(date);
+        register_guiDetails register = new register_guiDetails(fName, lName, uName, eMail, pNumber, password, cPassword, gender, date1);
+        register_guiController = new register_guiController();
+        int insert = register_guiController.register_guiDetails(register);
+        System.out.println(fName);
+        System.out.println(lName);
+        System.out.println(uName);
+        System.out.println(eMail);
+        System.out.println(pNumber);
+        System.out.println(password);
+        System.out.println(cPassword);
+        System.out.println(gender);
+        System.out.println(date1);
     }
 
     private void confirm_password2ActionPerformed(java.awt.event.ActionEvent evt) {
@@ -485,7 +524,7 @@ public class register_gui extends javax.swing.JFrame {
         else if(female.isSelected())
         {gender3 = "Female";}
         else if(other.isSelected())
-        {gender3 = "Female";}
+        {gender3 = "Others";}
     }
 
     /**
