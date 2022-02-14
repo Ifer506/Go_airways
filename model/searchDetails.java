@@ -8,7 +8,6 @@ public class searchDetails {
     private static String nationality;
 
     public searchDetails(){
-
     }
 
     public searchDetails(String from0,String to0 ,String ddate,String adate,String nationality){
@@ -18,21 +17,16 @@ public class searchDetails {
         searchDetails.adate = adate;
         searchDetails.nationality = nationality;
     }
+
     public static String getFrom0() {
         return from0;
     }
-
-   
     public void setFrom0(String from0) {
         searchDetails.from0 = from0;
     }
-
-   
     public static String getTo0() {
         return to0;
     }
-
-   
     public void setTo0(String to0) {
         searchDetails.to0 = to0;
     }

@@ -16,5 +16,5 @@ public class travellerDetailsController {
 
        db = new DbConnection();
        return db.maniulate(query);
-}
+    }
 }

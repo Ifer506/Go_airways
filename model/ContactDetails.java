@@ -8,7 +8,6 @@ public class ContactDetails {
     private static String EMail;
 
     public ContactDetails(){
-
     }
 
     public ContactDetails(String FirstName,String LastName ,String Nationality,String ContactNo,String EMail){
@@ -18,21 +17,16 @@ public class ContactDetails {
         ContactDetails.ContactNo = ContactNo;
         ContactDetails.EMail = EMail;
     }
+
     public static String getFirstName() {
         return FirstName;
     }
-
-   
     public void setFirstName(String FirstName) {
         ContactDetails.FirstName = FirstName;
     }
-
-   
     public static String getLastName() {
         return LastName;
     }
-
-   
     public void setLastName(String LastName) {
         ContactDetails.LastName = LastName;
     }

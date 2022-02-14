@@ -89,6 +89,7 @@ public class AfterTicket4 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(34, 40, 44));
+        // setIconImage("/view/Images/airplane.png");
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(197, 148, 27));

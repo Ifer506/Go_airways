@@ -167,7 +167,6 @@ public class FlightDetails extends javax.swing.JFrame {
         setTitle("FlightDetails");
         setAlwaysOnTop(true);
         setBackground(new java.awt.Color(30, 44, 45));
-        setPreferredSize(new java.awt.Dimension(800, 689));
 
         jButton1.setBackground(new java.awt.Color(34, 40, 44));
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -511,7 +510,7 @@ public class FlightDetails extends javax.swing.JFrame {
                             .addComponent(jButton4)
                             .addComponent(jButton3)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(637, 637, 637)
+                        .addGap(641, 641, 641)
                         .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(198, 198, 198)
@@ -688,7 +687,7 @@ public class FlightDetails extends javax.swing.JFrame {
         dispose();
         new Home().setVisible(true);       // TODO add your handling code here:
     }  
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
         travellersController travellersController;
         String travel = jComboBox3.getSelectedItem().toString();
         travellers travell = new travellers(travel); 

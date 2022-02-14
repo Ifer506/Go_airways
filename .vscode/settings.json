@@ -2,6 +2,8 @@
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
         "c:\\Users\\dell\\Downloads\\jcalendar-1.4\\lib\\jcalendar-1.4.jar",
-        "c:\\Users\\dell\\Downloads\\mysql-connector-java-8.0.27\\mysql-connector-java-8.0.27.jar"
+        "c:\\Users\\dell\\Downloads\\mysql-connector-java-8.0.27\\mysql-connector-java-8.0.27.jar",
+        "c:\\Users\\dell\\Downloads\\KGradientPanel.jar",
+        "c:\\Users\\dell\\Downloads\\KControls-2.0.jar"
     ]
 }

@@ -14,11 +14,6 @@ import view.FlightDetails;
 
 import controller.searchDetailsController;
 import model.searchDetails;
-import javax.swing.JFrame;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.awt.Image;
-import javax.imageio.ImageIO;
 
 
 /**
