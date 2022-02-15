@@ -8,6 +8,9 @@ public class btn5 extends JFrame implements ActionListener {
 //    JLabel desc = new JLabel("DESCRIPTION");
     JButton au = new JButton("About Us");
     JButton fd = new JButton("Flight Details");
+    JButton btn0;
+    JButton btn1;
+    JButton btn2;
     public btn5(){
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -29,9 +32,9 @@ public class btn5 extends JFrame implements ActionListener {
         ImageIcon img2 = new ImageIcon("airbus3.JPG");
         Image icon2 = img2.getImage().getScaledInstance(300,225,Image.SCALE_DEFAULT);
 
-        JButton btn0 = new JButton(new ImageIcon(icon));
-        JButton btn1 = new JButton(new ImageIcon(icon1));
-        JButton btn2 = new JButton(new ImageIcon(icon2));
+        btn0 = new JButton(new ImageIcon(icon));
+        btn1 = new JButton(new ImageIcon(icon1));
+        btn2 = new JButton(new ImageIcon(icon2));
 
         btn0.setBounds(115,100,300,225);
         lbl0.setBounds(210,325,150,20);
@@ -50,6 +53,9 @@ public class btn5 extends JFrame implements ActionListener {
 
 
         au.addActionListener(this);
+        btn0.addActionListener(this);
+        btn1.addActionListener(this);
+        btn2.addActionListener(this);
 
         goAir.setBounds(10,10,200,50);
         goAir.setFont(new Font("Times",Font.BOLD, 30));
@@ -84,6 +90,18 @@ public class btn5 extends JFrame implements ActionListener {
         if(e.getSource()==au){
             dispose();
             new AboutGo().setVisible(true);
+        }
+        if(e.getSource()==btn0){
+            dispose();
+            new ariCraft1().setVisible(true);
+        }
+        if(e.getSource()==btn1){
+            dispose();
+            new airCraft2().setVisible(true);
+        }
+        if(e.getSource()==btn2){
+            dispose();
+            new airCraft3().setVisible(true);
         }
     }
     public static void main(String[] args) {
