@@ -3,14 +3,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class btn1 extends JFrame implements ActionListener {
+public class ariCraft1 extends JFrame implements ActionListener {
     JLabel goAir = new JLabel("Go Airways");
-    JLabel desc = new JLabel("<html>Connecting people has been at the core of everything we do since go Airways founding.<br>" +
-            "That’s why we’re committed to giving back 2% of our annual net income to the places where we live, work and serve.</html>");
+    JLabel desc = new JLabel("<html>The ATR 72 is a twin-engine turboprop, short-haul regional airliner developed and produced in France and Italy by aircraft manufacturer ATR ," +
+            " a joint venture formed by French aerospace company Aérospatiale (now Airbus) and Italian aviation conglomerate Aeritalia ." +
+            "Basically this aircarft flying on the Jankpur Biratnagar Jhapa for a long distance flight. </htm>");
     JButton au = new JButton("About Us");
     JButton fd = new JButton("Flight Details");
-
-    public btn1(){
+    public ariCraft1(){
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         getContentPane().setBackground(Color.decode("#22282C"));
@@ -43,10 +43,10 @@ public class btn1 extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==au){
             dispose();
-            new AboutGo().setVisible(true);
+            new btn5().setVisible(true);
         }
     }
     public static void main(String[] args) {
-        new btn1().setVisible(true);
+        new ariCraft1().setVisible(true);
     }
 }

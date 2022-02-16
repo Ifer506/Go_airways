@@ -9,13 +9,14 @@ public class btn0 extends JFrame implements ActionListener {
             "and had a goal of bringing people, places and diverse cultures closer together<br>" +
             "we look forward to sharing our exciting sustainability initiatives with you.<br>" +
             "With that in mind, Go airliways  ESG strategy is centered on lowering our carbon footprint.</html>");
+
     JButton au = new JButton("About Us");
     JButton fd = new JButton("Flight Details");
 
     public btn0(){
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        getContentPane().setBackground(new Color(0,0,150));
+        getContentPane().setBackground(Color.decode("#22282C"));
         setLayout(null);
 
         au.addActionListener(this);
@@ -25,6 +26,7 @@ public class btn0 extends JFrame implements ActionListener {
         goAir.setForeground(new Color(0,200,200));
 
         desc.setBounds(250,200,1000,200);
+        desc.setFont(new Font("Algerian",Font.BOLD, 30));
         desc.setForeground(new Color(0,200,200));
 
         au.setBounds(250,50,90,30);
@@ -35,7 +37,7 @@ public class btn0 extends JFrame implements ActionListener {
         fd.setBackground(new Color(0,0,150));
         fd.setForeground(new Color(0,200,200));
 
-        desc.setFont(new Font("Times",Font.BOLD, 20));
+        desc.setFont(new Font("Times",Font.BOLD, 25));
 
         add(goAir);
         add(au);

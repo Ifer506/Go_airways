@@ -3,14 +3,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class btn1 extends JFrame implements ActionListener {
+public class airCraft3 extends JFrame implements ActionListener {
     JLabel goAir = new JLabel("Go Airways");
-    JLabel desc = new JLabel("<html>Connecting people has been at the core of everything we do since go Airways founding.<br>" +
-            "That’s why we’re committed to giving back 2% of our annual net income to the places where we live, work and serve.</html>");
+    JLabel desc = new JLabel("<html>The Bombardier Q400 is a turboprop aircraft from the de Havilland Canada Dash 8 family. " +
+            "Our Bombardier Q400 is a dual turboprop aeroplane with particularly low CO₂ footprint." +
+            "The Bombardier Q400 sets new standards in terms of environmental friendliness, efficiency and comfort. " +
+            "Enjoy travelling across : the go Bombardier Q400 flies you to pokhara kathmandu chitwan." +
+            "</htm>");
     JButton au = new JButton("About Us");
     JButton fd = new JButton("Flight Details");
-
-    public btn1(){
+    public airCraft3(){
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         getContentPane().setBackground(Color.decode("#22282C"));
@@ -43,10 +45,10 @@ public class btn1 extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==au){
             dispose();
-            new AboutGo().setVisible(true);
+            new btn5().setVisible(true);
         }
     }
     public static void main(String[] args) {
-        new btn1().setVisible(true);
+        new airCraft3().setVisible(true);
     }
 }

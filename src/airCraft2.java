@@ -3,14 +3,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class btn1 extends JFrame implements ActionListener {
+public class airCraft2 extends JFrame implements ActionListener {
     JLabel goAir = new JLabel("Go Airways");
-    JLabel desc = new JLabel("<html>Connecting people has been at the core of everything we do since go Airways founding.<br>" +
-            "That’s why we’re committed to giving back 2% of our annual net income to the places where we live, work and serve.</html>");
+    JLabel desc = new JLabel("<html>The Bombardier CRJ700, CRJ900, and CRJ1000 are a family of regional jet airliners" +
+            " that were designed and manufactured by Canadian transportation conglomerate Bombardier" +
+            " Bombardier launched the CRJ900 NextGen to replace the initial version. Its improvements and" +
+            " conic nozzle enhances fuel economy  The new model has improved economics and a new cabin. This flew in pokhara Lukla  Lumbini.</htm>");
     JButton au = new JButton("About Us");
     JButton fd = new JButton("Flight Details");
-
-    public btn1(){
+    public airCraft2(){
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         getContentPane().setBackground(Color.decode("#22282C"));
@@ -43,10 +44,10 @@ public class btn1 extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==au){
             dispose();
-            new AboutGo().setVisible(true);
+            new btn5().setVisible(true);
         }
     }
     public static void main(String[] args) {
-        new btn1().setVisible(true);
+        new airCraft2().setVisible(true);
     }
 }

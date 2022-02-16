@@ -12,19 +12,19 @@ public class AboutGo extends JFrame implements ActionListener {
     Image icon = img0.getImage().getScaledInstance(300,225,Image.SCALE_DEFAULT);
     ImageIcon img1 = new ImageIcon("photo4.png");
     Image icon0 = img1.getImage().getScaledInstance(300,225,Image.SCALE_DEFAULT);
-    //    Icon icon0 = new ImageIcon("photo4.png");
+//    Icon icon0 = new ImageIcon("photo4.png");
     ImageIcon img2 = new ImageIcon("photo3.jpeg");
     Image icon1 = img2.getImage().getScaledInstance(300,225,Image.SCALE_DEFAULT);
-    //    Icon icon1 = new ImageIcon("photo3.jpeg");
+//    Icon icon1 = new ImageIcon("photo3.jpeg");
     ImageIcon img3 = new ImageIcon("photo2.jpg");
     Image icon2 = img3.getImage().getScaledInstance(300,225,Image.SCALE_DEFAULT);
-    //    Icon icon2 = new ImageIcon("photo2.jpg");
+//    Icon icon2 = new ImageIcon("photo2.jpg");
     ImageIcon img4 = new ImageIcon("photo5.jpg");
     Image icon3 = img4.getImage().getScaledInstance(300,225,Image.SCALE_DEFAULT);
-    //    Icon icon3 = new ImageIcon("photo5.jpg");
+//    Icon icon3 = new ImageIcon("photo5.jpg");
     ImageIcon img5 = new ImageIcon("photo6.jpg");
     Image icon4 = img5.getImage().getScaledInstance(300,225,Image.SCALE_DEFAULT);
-    //    Icon icon4 = new ImageIcon("photo6.jpg");
+//    Icon icon4 = new ImageIcon("photo6.jpg");
     JButton btn0 = new JButton(new ImageIcon(icon));
     JButton btn1 = new JButton(new ImageIcon(icon0));
     JButton btn3 = new JButton(new ImageIcon(icon2));
@@ -112,8 +112,8 @@ public class AboutGo extends JFrame implements ActionListener {
     }
     public void actionPerformed(ActionEvent a){
         if(a.getSource()==btn0){
-            dispose();
-            new btn0().setVisible(true);
+           dispose();
+           new btn0().setVisible(true);
         }
         if(a.getSource()==btn1){
             dispose();

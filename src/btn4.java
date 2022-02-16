@@ -17,7 +17,7 @@ public class btn4 extends JFrame implements ActionListener {
     Image icon2 = img2.getImage().getScaledInstance(240,225,Image.SCALE_DEFAULT);
     ImageIcon img3 = new ImageIcon("btn3.png");
     Image icon3 = img3.getImage().getScaledInstance(240,225,Image.SCALE_DEFAULT);
-    ImageIcon img4 = new ImageIcon("btn4.png");
+    ImageIcon img4 = new ImageIcon("btn10.JPEG");
     Image icon4 = img4.getImage().getScaledInstance(240,225,Image.SCALE_DEFAULT);
 
     JLabel lbl0 = new JLabel(new ImageIcon(icon0));
@@ -26,18 +26,16 @@ public class btn4 extends JFrame implements ActionListener {
     JLabel lbl3 = new JLabel(new ImageIcon(icon3));
     JLabel lbl4 = new JLabel(new ImageIcon(icon4));
 
-    JLabel name0 = new JLabel("Ruchan Kayastha(Revenue Department)");
-    JLabel name1 = new JLabel("Abishek Basnet(Finance Department)");
+    JLabel name0 = new JLabel("Ruchan Kayastha(Management Information Department)");
+    JLabel name1 = new JLabel("Abishek Basnet(Marketing, Sales and Ground Handling)");
     JLabel name2 = new JLabel("Karma Pasang Lama(Operation Department)");
-    JLabel name3 = new JLabel("Sumedha Raj Shakya(Management Information System)");
-    JLabel name4 = new JLabel("Abinav Dev Bhatta(Marketing, Sales and Ground Handling)");
+    JLabel name3 = new JLabel("Sumedha Raj Shakya(Revenue Department)");
+    JLabel name4 = new JLabel("Abinav Dev Bhatta(Finance Department)");
 
     public btn4(){
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        getContentPane().setBackground(new Color(0,0,150));
-        setLayout(null);
-
+        getContentPane().setBackground(Color.decode("#22282C"));
         au.addActionListener(this);
 
         goAir.setBounds(10,10,200,50);
@@ -57,23 +55,23 @@ public class btn4 extends JFrame implements ActionListener {
         desc.setFont(new Font("Times",Font.BOLD, 20));
 
         lbl0.setBounds(125,100,300,225);
-        name0.setBounds(140,325,300,20);
+        name0.setBounds(120,325,340,20);
         name0.setForeground(new Color(0,200,200));
 
         lbl1.setBounds(475,100,300,225);
-        name1.setBounds(500,325,300,20);
+       name1.setBounds(480,325,340,20);
         name1.setForeground(new Color(0,200,200));
 
         lbl2.setBounds(825,100,300,225);
-        name2.setBounds(850,325,300,20);
+        name2.setBounds(845,325,260,20);
         name2.setForeground(new Color(0,200,200));
 
         lbl3.setBounds(325,400,300,225);
-        name3.setBounds(340,625,350,20);
+        name3.setBounds(350,625,300,20);
         name3.setForeground(new Color(0,200,200));
 
         lbl4.setBounds(675,400,300,225);
-        name4.setBounds(700,625,350,20);
+        name4.setBounds(800,625,250,20);
         name4.setForeground(new Color(0,200,200));
 
         au.setFocusable(false);
