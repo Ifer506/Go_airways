@@ -50,10 +50,9 @@ public class LogIn extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        kGradientPanel2.setBackground(new java.awt.Color(255, 204, 0));
-        kGradientPanel2.setForeground(new java.awt.Color(197, 148, 27));
-        kGradientPanel2.setkEndColor(new java.awt.Color(255, 204, 0));
-        kGradientPanel2.setkStartColor(new java.awt.Color(255, 204, 0));
+        kGradientPanel2.setForeground(new java.awt.Color(34, 40, 44));
+        kGradientPanel2.setkEndColor(new java.awt.Color(240, 240, 240));
+        kGradientPanel2.setkStartColor(new java.awt.Color(240, 240, 240));
 
         kButton1.setBackground(new java.awt.Color(255, 204, 0));
         kButton1.setForeground(new java.awt.Color(0, 0, 0));
@@ -68,7 +67,7 @@ public class LogIn extends javax.swing.JFrame {
         kButton2.setForeground(new java.awt.Color(0, 0, 0));
         kButton2.setText("SignUp");
 
-        jTextField2.setBackground(new java.awt.Color(255, 204, 0));
+        jTextField2.setBackground(new java.awt.Color(240, 240, 240));
         jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextField2.setActionCommand("<Not Set>");
         jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
@@ -80,12 +79,14 @@ public class LogIn extends javax.swing.JFrame {
         kButton3.setText("Exit");
 
         jLabel1.setBackground(new java.awt.Color(255, 204, 0));
+        jLabel1.setForeground(new java.awt.Color(197, 148, 27));
         jLabel1.setText("UserName");
 
         jLabel2.setBackground(new java.awt.Color(34, 44, 40));
+        jLabel2.setForeground(new java.awt.Color(197, 148, 27));
         jLabel2.setText("Password");
 
-        jPasswordField1.setBackground(new java.awt.Color(255, 204, 0));
+        jPasswordField1.setBackground(new java.awt.Color(240, 240, 240));
         jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jPasswordField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         jPasswordField1.setMargin(new java.awt.Insets(0, 0, 2, 0));
@@ -97,9 +98,10 @@ public class LogIn extends javax.swing.JFrame {
 
         jLabel3.setBackground(new java.awt.Color(255, 204, 0));
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(197, 148, 27));
         jLabel3.setText("Go Airways");
 
-        jCheckBox1.setBackground(new java.awt.Color(255, 204, 0));
+        jCheckBox1.setForeground(new java.awt.Color(197, 148, 27));
         jCheckBox1.setText("Show/Hide");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
