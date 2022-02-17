@@ -1,6 +1,5 @@
 create database FMS;
 use FMS;
-
 create table searchDetails(
 from0 varchar(20) ,
 to0 varchar(30),
@@ -26,8 +25,7 @@ create table updateDetails(
 flightNumber varchar(20),
 Dep_Time varchar(20),
 Arr_Time varchar(20),
-Detaination varchar(20) 
-);
+Detaination varchar(20) );
 
 create table register_gui(
 fName varchar(20),
@@ -35,38 +33,46 @@ lName varchar(20),
 uName varchar(30),
 eMail varchar(50),
 pNumber varchar(15),
-password varchar(30),
-cPassword varchar(30),
 gender varchar(7),
-date varchar(20));
+DateOFBirth varchar(20),
+admin varchar(10),
+password varchar(30),
+cPassword varchar(30));
 
 create table AddUser(
-fName varchar(20),
-lName varchar(20),
-uName varchar(20),
-eMail varchar(40),
-pNumber varchar(14)
-);
+First_Name varchar(20),
+Last_Name varchar(20),
+User_Name varchar(20),
+EMail varchar(40),
+Phone_Number varchar(14), 
+Password varchar(20),
+Confirm_Password varchar(20),
+Admin varchar(10));
 
 create table UpdateFlight(
-fNumber varchar(10),
-dTime varchar(20),
-aTime varchar(20),
-destination varchar(20),
-flightCost varchar(10)
+Flight_Number varchar(10),
+Departure_Time varchar(20),
+Arrival_Time varchar(20),
+From_ VARCHAR(20),
+Destination varchar(20),
+Flight_Cost varchar(10));
+
+create table book(
+flightNumber varchar(20)
 );
 
-select * from register_gui;
-select * from searchDetails;
-select * from travellers;
-select * from ContactDetails;
-select * from TravellersDetails;
-select * from updateDetails;
-select * from adduser;
-select * from UpdateFlight;
+create table registration(
+FirstName varchar(20),
+LastName varchar(20),
+UserName varchar(20),
+Email varchar (20),
+Number bigint,
+Address varchar(20),
+PassWord varchar(20),
+DateOfBirth varchar(20),
+Gender varchar(20)
+);
 
-drop table register_gui;
-drop table AddUser;
-drop table customer;
-drop table travellers;
-drop table TravellersDetails;
+select * from adduser;
+select fName,lName from register_gui;
+delete from register_gui where uName = 'kjhk'
