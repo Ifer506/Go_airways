@@ -7,6 +7,8 @@ package view;
 import java.sql.Date;
 import java.text.DateFormat;
 
+import javax.swing.JOptionPane;
+
 import controller.register_guiController;
 import model.register_guiDetails;
 
@@ -21,6 +23,7 @@ public class register_gui extends javax.swing.JFrame {
      */
     public register_gui() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -502,6 +505,15 @@ public class register_gui extends javax.swing.JFrame {
         register_guiDetails register = new register_guiDetails(fName, lName, uName, eMail, pNumber, password, cPassword, gender, date1, admin);
         register_guiController = new register_guiController();
         int insert = register_guiController.register_guiDetails(register);
+        if(insert==1){
+            JOptionPane.showMessageDialog(null, "Registered Successfully");
+            dispose();
+            new Login_Page().setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Registered Unsuccessful");
+
+        }
         System.out.println(fName);
         System.out.println(lName);
         System.out.println(uName);
