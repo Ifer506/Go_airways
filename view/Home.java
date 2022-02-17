@@ -10,6 +10,10 @@ import java.text.DateFormat;
 
 import javax.swing.JButton;
 import javax.swing.plaf.basic.BasicButtonUI;
+
+import AboutUs.AboutGo;
+import FAQ_and_Careers.Career;
+import FAQ_and_Careers.FAQ;
 import view.FlightDetails;
 
 import controller.searchDetailsController;
@@ -182,7 +186,7 @@ public class Home extends javax.swing.JFrame
         pnlSide.add(jButton1);
 
         jButton2.setBackground(new java.awt.Color(34, 40, 44));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_circle_20px_1.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_about_20px.png"))); // NOI18N
         jButton2.setPreferredSize(new java.awt.Dimension(40, 40));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -192,7 +196,7 @@ public class Home extends javax.swing.JFrame
         pnlSide.add(jButton2);
 
         jButton3.setBackground(new java.awt.Color(34, 40, 44));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_document_20px.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_faq_20px.png"))); // NOI18N
         jButton3.setPreferredSize(new java.awt.Dimension(40, 40));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,7 +206,7 @@ public class Home extends javax.swing.JFrame
         pnlSide.add(jButton3);
 
         jButton4.setBackground(new java.awt.Color(34, 40, 44));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_target_20px.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_new_job_30px.png"))); // NOI18N
         jButton4.setPreferredSize(new java.awt.Dimension(40, 40));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -211,14 +215,6 @@ public class Home extends javax.swing.JFrame
         });
         pnlSide.add(jButton4);
 
-        jButton5.setBackground(new java.awt.Color(34, 40, 44));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_align_left_20px.png"))); // NOI18N
-        jButton5.setPreferredSize(new java.awt.Dimension(40, 40));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
         pnlSide.add(jButton5);
 
         pnlRoot.add(pnlSide, java.awt.BorderLayout.WEST);
@@ -562,19 +558,19 @@ public class Home extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        new FAQ().setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        new AboutGo().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        new Home().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        new Career().setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -582,7 +578,7 @@ public class Home extends javax.swing.JFrame
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
+        new Login_Page().setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
