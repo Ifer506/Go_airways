@@ -484,7 +484,7 @@ public class register_gui extends javax.swing.JFrame {
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        register_guiController register_guiController;
+        try{
         String fName = Fname1.getText();
         String lName = Lname1.getText();
         String uName = user_name1.getText();
@@ -492,6 +492,34 @@ public class register_gui extends javax.swing.JFrame {
         String pNumber = number1.getText();
         String password = password1.getText();
         String cPassword = confirm_password2.getText();
+        System.out.println(fName);
+        System.out.println(lName);
+        System.out.println(uName);
+        System.out.println(eMail);
+        System.out.println(pNumber);
+        System.out.println(password);
+        System.out.println(cPassword);
+        if(fName==null){
+            JOptionPane.showMessageDialog(null, "First Name is Mandatory");
+        }
+        else if(lName==null){
+            JOptionPane.showMessageDialog(null, "Last Name is Mandatory");
+        }
+        else if(uName=="   "){
+            JOptionPane.showMessageDialog(null, "UserName is Mandatory");
+        }
+        else if(eMail=="    "){
+            JOptionPane.showMessageDialog(null, "Email is Mandatory");
+        }
+        else if(pNumber=="     "){
+            JOptionPane.showMessageDialog(null, "Phone Number is Mandatory");
+        }
+        else if(password=="      "){
+            JOptionPane.showMessageDialog(null, "Please set a Password");
+        }
+        else if(cPassword=="     "){
+            JOptionPane.showMessageDialog(null, "Re-Enter the password");
+        }
         String admin = "false";
         String gender="";
         if(male.isSelected())
@@ -502,6 +530,8 @@ public class register_gui extends javax.swing.JFrame {
         {gender = "Others";}
         java.util.Date date = jDateChooser1.getDate();
         String date1 = DateFormat.getDateInstance().format(date);
+        System.out.println(date1);
+        register_guiController register_guiController;
         register_guiDetails register = new register_guiDetails(fName, lName, uName, eMail, pNumber, password, cPassword, gender, date1, admin);
         register_guiController = new register_guiController();
         int insert = register_guiController.register_guiDetails(register);
@@ -523,6 +553,11 @@ public class register_gui extends javax.swing.JFrame {
         System.out.println(cPassword);
         System.out.println(gender);
         System.out.println(date1);
+    }
+
+    catch(Exception e){
+        JOptionPane.showMessageDialog(null, "Date of Birth must not be empty");
+    }
     }
 
     private void confirm_password2ActionPerformed(java.awt.event.ActionEvent evt) {
