@@ -14,18 +14,20 @@ import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicButtonUI;
 
 import controller.AddUserController;
+import controller.register_guiController;
 import model.AddUserDetails;
+import model.register_guiDetails;
 /**
  *
  * @author rocke
  */
-public class AddUser extends javax.swing.JFrame 
+public class AddUser extends javax.swing.JFrame
 {
 
     /**
      * Creates new form addUser
      */
-    public AddUser() 
+    public AddUser()
     {
         initComponents();
         Toolkit toolkit = getToolkit();
@@ -36,34 +38,34 @@ public class AddUser extends javax.swing.JFrame
         {
             btn.setBackground(new Color(34,40,44));
             btn.setUI(new BasicButtonUI());
-            btn.addMouseListener(new MouseListener() 
+            btn.addMouseListener(new MouseListener()
             {
                 @Override
-                public void mouseClicked(MouseEvent e) 
+                public void mouseClicked(MouseEvent e)
                 {
-                    
+
                 }
 
                 @Override
-                public void mousePressed(MouseEvent e) 
+                public void mousePressed(MouseEvent e)
                 {
-                    
+
                 }
 
                 @Override
-                public void mouseReleased(MouseEvent e) 
+                public void mouseReleased(MouseEvent e)
                 {
-                    
+
                 }
 
                 @Override
-                public void mouseEntered(MouseEvent e) 
+                public void mouseEntered(MouseEvent e)
                 {
                     btn.setBackground(new Color(54, 81, 207));
                 }
 
                 @Override
-                public void mouseExited(MouseEvent e) 
+                public void mouseExited(MouseEvent e)
                 {
                     btn.setBackground(new Color (34,40,44));
                 }
@@ -98,6 +100,10 @@ public class AddUser extends javax.swing.JFrame
         jTextField4 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        jPasswordField2 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -206,12 +212,30 @@ public class AddUser extends javax.swing.JFrame
 
         jButton1.setBackground(new java.awt.Color(34, 40, 44));
         jButton1.setForeground(new java.awt.Color(197, 148, 27));
-        jButton1.setText("Add User");
+        jButton1.setText("Add Staff");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        jLabel7.setBackground(new java.awt.Color(34, 40, 44));
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(197, 148, 27));
+        jLabel7.setText("Password");
+
+        jLabel8.setBackground(new java.awt.Color(34, 40, 44));
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(197, 148, 27));
+        jLabel8.setText("Confirm Password");
+
+        jPasswordField1.setBackground(new java.awt.Color(34, 40, 44));
+        jPasswordField1.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jPasswordField1.setForeground(new java.awt.Color(197, 148, 27));
+
+        jPasswordField2.setBackground(new java.awt.Color(34, 40, 44));
+        jPasswordField2.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        jPasswordField2.setForeground(new java.awt.Color(197, 148, 27));
 
         javax.swing.GroupLayout pnlCCenterLayout = new javax.swing.GroupLayout(pnlCCenter);
         pnlCCenter.setLayout(pnlCCenterLayout);
@@ -220,11 +244,6 @@ public class AddUser extends javax.swing.JFrame
             .addGroup(pnlCCenterLayout.createSequentialGroup()
                 .addGap(0, 239, Short.MAX_VALUE)
                 .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlCCenterLayout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlCCenterLayout.createSequentialGroup()
                         .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel2)
@@ -237,12 +256,23 @@ public class AddUser extends javax.swing.JFrame
                             .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlCCenterLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                            .addComponent(jPasswordField2)
+                            .addComponent(jPasswordField1))))
                 .addGap(106, 106, 106))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCCenterLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addGap(289, 289, 289))
+                .addGap(280, 280, 280))
         );
         pnlCCenterLayout.setVerticalGroup(
             pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,9 +297,17 @@ public class AddUser extends javax.swing.JFrame
                 .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
+                .addGap(18, 18, 18)
+                .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addGap(81, 81, 81))
         );
 
         pnlCenter.add(pnlCCenter, java.awt.BorderLayout.CENTER);
@@ -294,38 +332,41 @@ public class AddUser extends javax.swing.JFrame
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    dispose();
-    new AdminHome().setVisible(true);
+        dispose();
+        new AdminHome().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      String fName =   jTextField1.getText();
-      String lName = jTextField2.getText();
-      String uName = jTextField3.getText();
-      String eMail = jTextField4.getText();
-      String pNumber = jTextField5.getText();
-      
-      AddUserDetails aud = new AddUserDetails(fName, lName, uName, eMail, pNumber);
-      AddUserController auc = new AddUserController();
-      int i = auc.AddUserDetails(aud);
-      if(i==1){
-      JOptionPane.showMessageDialog(null, "User Successfully added");
-      dispose();
-      new AdminHome().setVisible(true);}
-      else{
-          JOptionPane.showMessageDialog(null, "Unable to add user");
-      }
+        String fName =   jTextField1.getText();
+        String lName = jTextField2.getText();
+        String uName = jTextField3.getText();
+        String eMail = jTextField4.getText();
+        String pNumber = jTextField5.getText();
+        String password = jPasswordField1.getText();
+        String cPassword = jPasswordField2.getText();
+        String admin = "true";
+
+        AddUserDetails aud = new AddUserDetails(fName, lName, uName, eMail, pNumber,password, cPassword, admin);
+        AddUserController auc = new AddUserController();
+        int i = AddUserController.AddUserDetails(aud);
+        if(i==1){
+            JOptionPane.showMessageDialog(null, "User Successfully added");
+            dispose();
+            new AdminHome().setVisible(true);}
+        else{
+            JOptionPane.showMessageDialog(null, "Unable to add user");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) 
+    public static void main(String args[])
     {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -347,9 +388,9 @@ public class AddUser extends javax.swing.JFrame
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() 
+        java.awt.EventQueue.invokeLater(new Runnable()
         {
-            public void run() 
+            public void run()
             {
                 new AddUser().setVisible(true);
             }
@@ -365,6 +406,10 @@ public class AddUser extends javax.swing.JFrame
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;

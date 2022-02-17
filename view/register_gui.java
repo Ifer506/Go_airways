@@ -489,6 +489,7 @@ public class register_gui extends javax.swing.JFrame {
         String pNumber = number1.getText();
         String password = password1.getText();
         String cPassword = confirm_password2.getText();
+        String admin = "false";
         String gender="";
         if(male.isSelected())
         {gender="Male";}
@@ -498,7 +499,7 @@ public class register_gui extends javax.swing.JFrame {
         {gender = "Others";}
         java.util.Date date = jDateChooser1.getDate();
         String date1 = DateFormat.getDateInstance().format(date);
-        register_guiDetails register = new register_guiDetails(fName, lName, uName, eMail, pNumber, password, cPassword, gender, date1);
+        register_guiDetails register = new register_guiDetails(fName, lName, uName, eMail, pNumber, password, cPassword, gender, date1, admin);
         register_guiController = new register_guiController();
         int insert = register_guiController.register_guiDetails(register);
         System.out.println(fName);

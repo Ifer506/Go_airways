@@ -9,13 +9,15 @@ import java.sql.DriverManager;
 import java.util.ArrayList;
 import model.AddUserDetails;
 import java.sql.*;
+
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author dell
  */
-public class ViewUser extends javax.swing.JFrame {
+public class ViewUser extends javax.swing.JFrame{
 
     /**
      * Creates new form ViewUser
@@ -27,7 +29,6 @@ public class ViewUser extends javax.swing.JFrame {
         // jScrollPane1.getViewport().setBackground(new Color(34,40,44));
         getContentPane().setBackground(new Color(34,40,44));
         jTable_Display_User.setFillsViewportHeight(true);
-        ArrayList<AddUserDetails> usersList = new ArrayList<>();
 
         try {
             String username = "root";
@@ -37,32 +38,36 @@ public class ViewUser extends javax.swing.JFrame {
             Connection con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/FMS?characterEncoding=utf8&useSSL=false&autoReconnect=true",
                     username, password);
-            String query1 = "SELECT * from AddUser";
+            String query1 = "SELECT fName,lName,uName,eMail,pNumber,gender,date from register_gui";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(query1);
             ResultSetMetaData rsmd = rs.getMetaData();
             DefaultTableModel model = (DefaultTableModel)jTable_Display_User.getModel();
+            JTable table = new JTable( model );
             int cols = rsmd.getColumnCount();
             String[] colName = new String[cols];
             for (int i=0;i<cols;i++)
                 colName[i]=rsmd.getColumnName(i+1);
             model.setColumnIdentifiers(colName);
-            String First_Name, lName, uName, eMail, pNumber;
+           
+            String First_Name, lName, uName, eMail, pNumber, gender, date;
             while(rs.next()){
                 First_Name = rs.getString(1);
                 lName = rs.getString(2);
                 uName = rs.getString(3);
                 eMail = rs.getString(4);
                 pNumber = rs.getString(5);
-                String[] row = {First_Name, lName, uName, eMail, pNumber};
+                gender = rs.getString(6);
+                date = rs.getString(7);
+
+                String[] row = {First_Name, lName, uName, eMail, pNumber,gender, date};
                 model.addRow(row);
             }
             st.close();
             con.close();
             } catch (Exception e) {
             e.printStackTrace();
-        }
-    }
+        }}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

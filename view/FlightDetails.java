@@ -1,16 +1,30 @@
 package view;
 
 import model.searchDetails;
+import model.singleDetails;
 import model.travellers;
+import controller.searchDetailsController;
+import controller.singleController;
 import controller.travellersController;
 
 import java.awt.Color;
+import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 
 
 /*
@@ -23,56 +37,55 @@ import javax.swing.JComboBox;
  * @author dell
  */
 public class FlightDetails extends javax.swing.JFrame {
-
-    /**
-     * Creates new form FlightDetails
-     */
     public FlightDetails() {
         initComponents();
         getContentPane().setBackground(new Color(34,40,44));
         this.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
-
+        jTable1.setFillsViewportHeight(true);
         jLabel6.setVisible(false);
         jLabel7.setVisible(false);
-        jLabel8.setVisible(false);
-        jLabel9.setVisible(false);
         jLabel10.setVisible(false);
-        jLabel11.setVisible(false);
-        jLabel12.setVisible(false);
-        jLabel13.setVisible(false);
-        jLabel14.setVisible(false);
-        jLabel15.setVisible(false);
-        jLabel16.setVisible(false);
-        jLabel17.setVisible(false);
-        jLabel18.setVisible(false);
-        jLabel19.setVisible(false);
-        jLabel20.setVisible(false);
-        jLabel21.setVisible(false);
-        jLabel22.setVisible(false);
-        jLabel23.setVisible(false);
-        jLabel25.setVisible(false);
-        jLabel24.setVisible(false);
-        jLabel26.setVisible(false);
-        jLabel27.setVisible(false);
-        jLabel28.setVisible(false);
-        jLabel29.setVisible(false);
-        jLabel30.setVisible(false);
-        jLabel31.setVisible(false);
-        jLabel32.setVisible(false);
-        jLabel33.setVisible(false);
-        jLabel34.setVisible(false);
-        jLabel35.setVisible(false);
-        jLabel36.setVisible(false);
-        jLabel37.setVisible(false);
-        jLabel38.setVisible(false);
-        jButton3.setVisible(false);
+        jTextField2.setVisible(false);
         jButton4.setVisible(false);
-        jButton5.setVisible(false);
-        jButton6.setVisible(false);
-        jButton7.setVisible(false);
-        jButton8.setVisible(false);
+        jLabel8.setVisible(false);
+        jTable1.setVisible(true);
+        jLabel38.setVisible(false);
         jButton1.setBackground(new Color(34,40,44));
         jButton1.setBorder(BorderFactory.createEmptyBorder());
+        // try {
+        //     String username = "root";
+        //     String password = "0422075m";
+        //     Class.forName("com.mysql.cj.jdbc.Driver");
+        //     // create the connection object
+        //     Connection con = DriverManager.getConnection(
+        //             "jdbc:mysql://localhost:3306/FMS?characterEncoding=utf8&useSSL=false&autoReconnect=true",
+        //             username, password);
+        //     String query1 = "SELECT * from UpdateFlight";
+        //     Statement st = con.createStatement();
+        //     ResultSet rs = st.executeQuery(query1);
+        //     ResultSetMetaData rsmd = rs.getMetaData();
+        //     DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        //     int cols = rsmd.getColumnCount();
+        //     String[] colName = new String[cols];
+        //     for (int i=0;i<cols;i++)
+        //         colName[i]=rsmd.getColumnName(i+1);
+        //     model.setColumnIdentifiers(colName);
+        //     String First_Name, lName, uName, eMail, pNumber, fCost;
+        //     while(rs.next()){
+        //         First_Name = rs.getString(1);
+        //         lName = rs.getString(2);
+        //         uName = rs.getString(3);
+        //         eMail = rs.getString(4);
+        //         pNumber = rs.getString(5);
+        //         fCost = rs.getString(6);
+        //         String[] row = {First_Name, lName, uName, eMail, pNumber, fCost};
+        //         model.addRow(row);
+        //     }
+        //     st.close();
+        //     con.close();
+        //     } catch (Exception e) {
+        //     e.printStackTrace();
+        // }
 
         String from0 = searchDetails.getFrom0();
         String to0 = searchDetails.getTo0();
@@ -126,42 +139,12 @@ public class FlightDetails extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         jLabel38 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("FlightDetails");
@@ -188,6 +171,7 @@ public class FlightDetails extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(197, 148, 27));
         jLabel2.setText("To");
 
+        jComboBox1.setBackground(new java.awt.Color(34, 40, 44));
         jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(197, 148, 27));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kathmandu", "Pokhara", "Dhangadhi", "Biratnagar", "Janakpur", "Surkhet", "Chitwan" }));
@@ -197,6 +181,7 @@ public class FlightDetails extends javax.swing.JFrame {
             }
         });
 
+        jComboBox2.setBackground(new java.awt.Color(34, 40, 44));
         jComboBox2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jComboBox2.setForeground(new java.awt.Color(197, 148, 27));
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"Kathmandu", "Pokhara", "Dhangadhi", "Biratnagar", "Janakpur", "Surkhet", "Chitwan" }));
@@ -230,6 +215,7 @@ public class FlightDetails extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(197, 148, 27));
         jLabel5.setText("Traveller");
 
+        jComboBox3.setBackground(new java.awt.Color(34, 40, 44));
         jComboBox3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         jComboBox3.setForeground(new java.awt.Color(197, 148, 27));
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
@@ -245,185 +231,44 @@ public class FlightDetails extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(197, 148, 27));
         jLabel8.setText("jLabel8");
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel9.setText("Flight Number");
+        jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(197, 148, 27));
+        jLabel38.setText("10 Flights");
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel10.setText("Departure Time");
+        jTable1.setBackground(new java.awt.Color(34, 40, 44));
+        jTable1.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(197, 148, 27));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel11.setText("Arrival Time");
+            },
+            new String [] {
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel12.setText("Duration");
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel13.setText("Choose Fare");
-
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel14.setText("jLabel14");
-
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel15.setText("jLabel15");
-
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel16.setText("jLabel16");
-
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel17.setText("jLabel17");
-
-        jButton3.setBackground(new java.awt.Color(34, 40, 44));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(197, 148, 27));
-        jButton3.setText("jButton3");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
             }
-        });
+        ));
+        jTable1.setGridColor(new java.awt.Color(34, 40, 44));
+        jTable1.setRowHeight(32);
+        jTable1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jTable1);
 
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel18.setText("jLabel18");
+        jLabel10.setBackground(new java.awt.Color(30, 44, 45));
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(197, 148, 27));
+        jLabel10.setText("Flight Number");
 
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel19.setText("jLabel19");
+        jTextField2.setBackground(new java.awt.Color(30, 44, 45));
+        jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(197, 148, 27));
 
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel20.setText("jLabel20");
-
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel21.setText("jLabel21");
-
-        jButton4.setBackground(new java.awt.Color(34, 40, 44));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        jButton4.setBackground(new java.awt.Color(30, 44, 45));
+        jButton4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(197, 148, 27));
-        jButton4.setText("jButton4");
+        jButton4.setText("BOOK");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel22.setText("jLabel22");
-
-        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel23.setText("jLabel23");
-
-        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel24.setText("jLabel24");
-
-        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel25.setText("jLabel25");
-
-        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel26.setText("jLabel26");
-
-        jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel27.setText("jLabel27");
-
-        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel28.setText("jLabel28");
-
-        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel29.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel29.setText("jLabel29");
-
-        jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel30.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel30.setText("jLabel30");
-
-        jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel31.setText("jLabel31");
-
-        jLabel32.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel32.setText("jLabel32");
-
-        jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel33.setText("jLabel33");
-
-        jLabel34.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel34.setText("jLabel34");
-
-        jLabel35.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel35.setText("jLabel35");
-
-        jLabel36.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel36.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel36.setText("jLabel36");
-
-        jLabel37.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel37.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel37.setText("jLabel37");
-
-        jButton5.setBackground(new java.awt.Color(34, 40, 44));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(197, 148, 27));
-        jButton5.setText("jButton5");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-
-        jButton6.setBackground(new java.awt.Color(34, 40, 44));
-        jButton6.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(197, 148, 27));
-        jButton6.setText("jButton6");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
-            }
-        });
-
-        jButton7.setBackground(new java.awt.Color(34, 40, 44));
-        jButton7.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(197, 148, 27));
-        jButton7.setText("jButton7");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-
-        jButton8.setBackground(new java.awt.Color(34, 40, 44));
-        jButton8.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(197, 148, 27));
-        jButton8.setText("jButton8");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
-            }
-        });
-
-        jLabel38.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jLabel38.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel38.setText("10 Flights");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -432,103 +277,66 @@ public class FlightDetails extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(214, 214, 214)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(198, 198, 198)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(106, 106, 106)
-                                .addComponent(jLabel2)
-                                .addGap(158, 158, 158)
-                                .addComponent(jLabel3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(65, 65, 65)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(64, 64, 64)
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(90, 90, 90)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(25, 25, 25)))
-                        .addGap(106, 106, 106)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5)))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(495, 495, 495)
+                        .addGap(502, 502, 502)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(179, 179, 179)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(229, 229, 229)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel22)
-                            .addComponent(jLabel29)
-                            .addComponent(jLabel33)
-                            .addComponent(jLabel37))
-                        .addGap(157, 157, 157)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel23)
-                            .addComponent(jLabel28)
-                            .addComponent(jLabel32)
-                            .addComponent(jLabel36))
-                        .addGap(133, 133, 133)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel24)
-                            .addComponent(jLabel27)
-                            .addComponent(jLabel31)
-                            .addComponent(jLabel35))
-                        .addGap(103, 103, 103)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel21)
-                            .addComponent(jLabel25)
-                            .addComponent(jLabel26)
-                            .addComponent(jLabel30)
-                            .addComponent(jLabel34))
-                        .addGap(90, 90, 90)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton8)
-                            .addComponent(jButton7)
-                            .addComponent(jButton6)
-                            .addComponent(jButton5)
-                            .addComponent(jButton4)
-                            .addComponent(jButton3)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(641, 641, 641)
                         .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addComponent(jLabel9)
-                        .addGap(54, 54, 54)
-                        .addComponent(jLabel10)
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabel11)
-                        .addGap(75, 75, 75)
-                        .addComponent(jLabel12)
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel13))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(642, 642, 642)
+                        .addGap(635, 635, 635)
                         .addComponent(jLabel38))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(560, 560, 560)
-                        .addComponent(jLabel6)))
+                        .addComponent(jLabel6))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(214, 214, 214)
+                                        .addComponent(jLabel1))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(198, 198, 198)
+                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(106, 106, 106)
+                                        .addComponent(jLabel2)
+                                        .addGap(158, 158, 158)
+                                        .addComponent(jLabel3))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(65, 65, 65)
+                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(64, 64, 64)
+                                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(90, 90, 90)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGap(25, 25, 25))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 724, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(106, 106, 106)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField2)
+                                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel10)))))
                 .addContainerGap(3675, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -561,56 +369,18 @@ public class FlightDetails extends javax.swing.JFrame {
                     .addComponent(jLabel8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel38)
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel17)
-                    .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel21)
-                    .addComponent(jButton4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel24)
-                    .addComponent(jLabel25)
-                    .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel26)
-                    .addComponent(jLabel27)
-                    .addComponent(jLabel28)
-                    .addComponent(jLabel29)
-                    .addComponent(jButton6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel30)
-                    .addComponent(jLabel31)
-                    .addComponent(jLabel32)
-                    .addComponent(jLabel33)
-                    .addComponent(jButton7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel34)
-                    .addComponent(jLabel35)
-                    .addComponent(jLabel36)
-                    .addComponent(jLabel37)
-                    .addComponent(jButton8))
-                .addContainerGap(1474, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(265, 265, 265)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(1344, Short.MAX_VALUE))
         );
 
         pack();
@@ -638,200 +408,87 @@ public class FlightDetails extends javax.swing.JFrame {
                 jLabel6.setText("(Departure and Arrival places must be different)");
             }    
             else{
+                try {
+                    String username = "root";
+                    String password = "0422075m";
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    // create the connection object
+                    Connection con = DriverManager.getConnection(
+                            "jdbc:mysql://localhost:3306/FMS?characterEncoding=utf8&useSSL=false&autoReconnect=true",
+                            username, password);
+
+                    String from = jComboBox1.getSelectedItem().toString();
+                    String to = jComboBox2.getSelectedItem().toString();
+                    java.util.Date date = jDateChooser1.getDate();
+                    String adate = DateFormat.getDateInstance().format(date);
+                    java.util.Date date2 = jDateChooser2.getDate();
+                    String ddate = DateFormat.getDateInstance().format(date2);
+                    System.out.println(from);
+                    System.out.println(to);
+                    System.out.println(adate);
+                    System.out.println(ddate);
+                    String query1 = "select * from UpdateFlight where from_ = '"+from+"' and destination='"+to+"';";
+                    Statement st = con.createStatement();
+                    ResultSet rs = st.executeQuery(query1);
+                    ResultSetMetaData rsmd = rs.getMetaData();
+                    DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+                    int cols = rsmd.getColumnCount();
+                    System.out.println(cols);
+                    String[] colName = new String[cols];
+                    for (int i=0;i<cols;i++)
+                        colName[i]=rsmd.getColumnName(i+1);
+                    model.setColumnIdentifiers(colName);
+                    String First_Name, lName, uName, eMail, pNumber, fCost;
+                    while(rs.next()){
+                        First_Name = rs.getString(1);
+                        lName = rs.getString(2);
+                        uName = rs.getString(3);
+                        eMail = rs.getString(4);
+                        pNumber = rs.getString(5);
+                        fCost = rs.getString(6);
+                        String[] row = {First_Name, lName, uName, eMail, pNumber, fCost};
+                        model.addRow(row);
+                    }
+                    st.close();
+                    con.close();
+                    } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 jLabel7.setText(jComboBox1.getSelectedItem().toString());
                 jLabel8.setText(jComboBox2.getSelectedItem().toString());
                 jLabel6.setVisible(false);
                 jLabel7.setVisible(true);
                 jLabel8.setVisible(true);
-                jLabel9.setVisible(true);
-                jLabel10.setVisible(true);
-                jLabel11.setVisible(true);
-                jLabel12.setVisible(true);
-                jLabel13.setVisible(true);
-                jLabel14.setVisible(true);
-                jLabel15.setVisible(true);
-                jLabel16.setVisible(true);
-                jLabel17.setVisible(true);
-                jLabel18.setVisible(true);
-                jLabel19.setVisible(true);
-                jLabel20.setVisible(true);
-                jLabel21.setVisible(true);
-                jLabel22.setVisible(true);
-                jLabel23.setVisible(true);
-                jLabel25.setVisible(true);
-                jLabel24.setVisible(true);
-                jLabel26.setVisible(true);
-                jLabel27.setVisible(true);
-                jLabel28.setVisible(true);
-                jLabel29.setVisible(true);
-                jLabel30.setVisible(true);
-                jLabel31.setVisible(true);
-                jLabel32.setVisible(true);
-                jLabel33.setVisible(true);
-                jLabel34.setVisible(true);
-                jLabel35.setVisible(true);
-                jLabel36.setVisible(true);
-                jLabel37.setVisible(true);
                 jLabel38.setVisible(true);
-                jButton3.setVisible(true);
+                jTable1.setVisible(true);
+                jLabel10.setVisible(true);
+                jTextField2.setVisible(true);
                 jButton4.setVisible(true);
-                jButton5.setVisible(true);
-                jButton6.setVisible(true);
-                jButton7.setVisible(true);
-                jButton8.setVisible(true);
             }   
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        String flightNumber = jTextField2.getText();
+        System.out.println(flightNumber);
+        singleDetails sd = new singleDetails(flightNumber); 
+        singleController singleController = new singleController();
+        int insert = singleController.singleDetails(sd);  
+        dispose();
+        new singleFlight().setVisible(true);
+
+        String travel = jComboBox3.getSelectedItem().toString();
+        travellers travell = new travellers(travel); 
+        travellersController travellersController = new travellersController();
+        int insert1 = travellersController.travellers(travell); 
+
+
+    }//GEN-LAST:event_jButton4ActionPerformed
     
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                   
         dispose();
         new Home().setVisible(true);       // TODO add your handling code here:
     }  
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        travellersController travellersController;
-        String travel = jComboBox3.getSelectedItem().toString();
-        travellers travell = new travellers(travel); 
-        travellersController = new travellersController();
-        int insert = travellersController.travellers(travell); 
-        dispose();
-
-        if(travel=="1"){
-            new AfterTicket().setVisible(true);
-        }
-        else if(travel == "2"){
-            new AfterTicket1().setVisible(true);
-        }
-        else if (travel =="3"){
-            new AfterTicket2().setVisible(true);
-        }
-        else if (travel=="4"){
-            new AfterTicket3().setVisible(true);
-        }
-        else{
-            new AfterTicket4().setVisible(true);
-        }
-    }
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        travellersController travellersController;
-        String travel = jComboBox3.getSelectedItem().toString();
-        travellers travell = new travellers(travel); 
-        travellersController = new travellersController();
-        int insert = travellersController.travellers(travell); 
-           
-        dispose();
-        if(travel=="1"){
-            new AfterTicket().setVisible(true);
-        }
-        else if(travel == "2"){
-            new AfterTicket1().setVisible(true);
-        }
-        else if (travel =="3"){
-            new AfterTicket2().setVisible(true);
-        }
-        else if (travel=="4"){
-            new AfterTicket3().setVisible(true);
-        }
-        else{
-            new AfterTicket4().setVisible(true);
-        }    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        travellersController travellersController;
-        String travel = jComboBox3.getSelectedItem().toString();
-        travellers travell = new travellers(travel); 
-        travellersController = new travellersController();
-        int insert = travellersController.travellers(travell); 
-           
-        dispose();
-        if(travel=="1"){
-            new AfterTicket().setVisible(true);
-        }
-        else if(travel == "2"){
-            new AfterTicket1().setVisible(true);
-        }
-        else if (travel =="3"){
-            new AfterTicket2().setVisible(true);
-        }
-        else if (travel=="4"){
-            new AfterTicket3().setVisible(true);
-        }
-        else{
-            new AfterTicket4().setVisible(true);
-        }    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        travellersController travellersController;
-        String travel = jComboBox3.getSelectedItem().toString();
-        travellers travell = new travellers(travel); 
-        travellersController = new travellersController();
-        int insert = travellersController.travellers(travell); 
-           
-        dispose();
-        if(travel=="1"){
-            new AfterTicket().setVisible(true);
-        }
-        else if(travel == "2"){
-            new AfterTicket1().setVisible(true);
-        }
-        else if (travel =="3"){
-            new AfterTicket2().setVisible(true);
-        }
-        else if (travel=="4"){
-            new AfterTicket3().setVisible(true);
-        }
-        else{
-            new AfterTicket4().setVisible(true);
-        }    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        travellersController travellersController;
-        String travel = jComboBox3.getSelectedItem().toString();
-        travellers travell = new travellers(travel); 
-        travellersController = new travellersController();
-        int insert = travellersController.travellers(travell); 
-           
-        dispose();
-        if(travel=="1"){
-            new AfterTicket().setVisible(true);
-        }
-        else if(travel == "2"){
-            new AfterTicket1().setVisible(true);
-        }
-        else if (travel =="3"){
-            new AfterTicket2().setVisible(true);
-        }
-        else if (travel=="4"){
-            new AfterTicket3().setVisible(true);
-        }
-        else{
-            new AfterTicket4().setVisible(true);
-        }    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        travellersController travellersController;
-        String travel = jComboBox3.getSelectedItem().toString();
-        travellers travell = new travellers(travel); 
-        travellersController = new travellersController();
-        int insert = travellersController.travellers(travell); 
-           
-        dispose();
-        if(travel=="1"){
-            new AfterTicket().setVisible(true);
-        }
-        else if(travel == "2"){
-            new AfterTicket1().setVisible(true);
-        }
-        else if (travel =="3"){
-            new AfterTicket2().setVisible(true);
-        }
-        else if (travel=="4"){
-            new AfterTicket3().setVisible(true);
-        }
-        else{
-            new AfterTicket4().setVisible(true);
-        }    }//GEN-LAST:event_jButton8ActionPerformed
-    
     /**
      * @param args the command line arguments
      */
@@ -871,12 +528,7 @@ public class FlightDetails extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    public javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -884,41 +536,16 @@ public class FlightDetails extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

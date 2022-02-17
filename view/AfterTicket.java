@@ -5,6 +5,7 @@ import controller.ContactDetailsController;
 import controller.travellersController;
 import controller.travellerDetailsController;
 import model.ContactDetails;
+import model.UpdateFlightDetails;
 import model.travellers;
 import model.travellersDetails;
 
@@ -24,8 +25,8 @@ public class AfterTicket extends javax.swing.JFrame {
      * Creates new form AfterTicket
      */
     public AfterTicket() {
-                getContentPane().setBackground(new Color(34,40,44));
-
+        getContentPane().setBackground(new Color(34,40,44));
+        String fCost = UpdateFlightDetails.getFlightCost();
         initComponents();
         setLocationRelativeTo(null);
 

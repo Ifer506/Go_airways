@@ -5,13 +5,20 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
 import java.sql.DriverManager;
 import java.util.ArrayList;
 import model.AddUserDetails;
 import java.sql.*;
 
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+
+import com.github.lgooddatepicker.components.DatePicker;
+import com.github.lgooddatepicker.components.TimePicker;
 
 /**
  *
@@ -26,7 +33,6 @@ public class ViewCurrentFlight extends javax.swing.JFrame {
 
         initComponents();
         setLocationRelativeTo(null);
-        // jScrollPane1.getViewport().setBackground(new Color(34,40,44));
         getContentPane().setBackground(new Color(34,40,44));
         jTable_Display_User.setFillsViewportHeight(true);
         try {
@@ -106,10 +112,10 @@ public class ViewCurrentFlight extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(197, 148, 27));
         jLabel1.setText("Go Airways");
 
+        jLabel2.setText("List of Flights");
         jLabel2.setBackground(new java.awt.Color(34, 44, 40));
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(197, 148, 27));
-        jLabel2.setText("List of Flights");
 
         jButton1.setBackground(new java.awt.Color(34, 40, 44));
         jButton1.setForeground(new java.awt.Color(197, 148, 27));

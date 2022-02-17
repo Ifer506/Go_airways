@@ -15,6 +15,9 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicButtonUI;
 
+import com.github.lgooddatepicker.components.DatePicker;
+import com.github.lgooddatepicker.components.TimePicker;
+
 import controller.UpdateFlightController;
 import model.UpdateFlightDetails;
 /**
@@ -98,10 +101,10 @@ public class UpdateFlight extends javax.swing.JFrame
         jTextField5 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jTextField6 = new javax.swing.JTextField();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
         jLabel7 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
+        dateTimePicker1 = new com.github.lgooddatepicker.components.DateTimePicker();
+        dateTimePicker2 = new com.github.lgooddatepicker.components.DateTimePicker();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -170,8 +173,8 @@ public class UpdateFlight extends javax.swing.JFrame
         jLabel4.setText("Arrival Time");
 
         jLabel5.setBackground(new java.awt.Color(34, 40, 44));
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(197, 148, 27));
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel5.setText("Destination");
 
         jTextField1.setBackground(new java.awt.Color(34, 40, 44));
@@ -188,6 +191,7 @@ public class UpdateFlight extends javax.swing.JFrame
         jLabel6.setText("Flight Cost");
 
         jTextField5.setBackground(new java.awt.Color(34, 40, 44));
+        jTextField5.setForeground(new java.awt.Color(197, 148, 27));
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5ActionPerformed(evt);
@@ -204,6 +208,7 @@ public class UpdateFlight extends javax.swing.JFrame
         });
 
         jTextField6.setBackground(new java.awt.Color(34, 40, 44));
+        jTextField6.setForeground(new java.awt.Color(197, 148, 27));
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 actionPerformed(evt);
@@ -216,6 +221,13 @@ public class UpdateFlight extends javax.swing.JFrame
         jLabel7.setText("From");
 
         jTextField7.setBackground(new java.awt.Color(34, 40, 44));
+        jTextField7.setForeground(new java.awt.Color(197, 148, 27));
+
+        dateTimePicker1.setBackground(new java.awt.Color(34, 40, 44));
+        dateTimePicker1.setForeground(new java.awt.Color(197, 148, 27));
+
+        dateTimePicker2.setBackground(new java.awt.Color(34, 40, 44));
+        dateTimePicker2.setForeground(new java.awt.Color(197, 148, 27));
 
         javax.swing.GroupLayout pnlCCenterLayout = new javax.swing.GroupLayout(pnlCCenter);
         pnlCCenter.setLayout(pnlCCenterLayout);
@@ -244,14 +256,15 @@ public class UpdateFlight extends javax.swing.JFrame
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(61, 61, 61)))
-                        .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField5)
-                            .addComponent(jTextField6)
-                            .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField7))
-                        .addGap(170, 170, 170))))
+                        .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                .addComponent(jTextField5)
+                                .addComponent(jTextField6)
+                                .addComponent(jTextField7))
+                            .addComponent(dateTimePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dateTimePicker2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(102, 102, 102))))
         );
         pnlCCenterLayout.setVerticalGroup(
             pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -261,14 +274,14 @@ public class UpdateFlight extends javax.swing.JFrame
                     .addComponent(jLabel2)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dateTimePicker1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(dateTimePicker2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
                 .addGroup(pnlCCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -316,20 +329,22 @@ public class UpdateFlight extends javax.swing.JFrame
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String fNumber = jTextField1.getText();
-        java.util.Date date = jDateChooser1.getDate();
-        String date0 = DateFormat.getDateInstance().format(date);
-        java.util.Date date1 = jDateChooser2.getDate();
-        String date2 = DateFormat.getDateInstance().format(date1);
         String from = jTextField7.getText();
         String dest = jTextField5.getText();
         String fCost = jTextField6.getText();
+        DatePicker date0 = dateTimePicker1.getDatePicker();
+        TimePicker time0 = dateTimePicker1.getTimePicker();
+        String dt0 = date0+"/"+time0;
+        DatePicker date1 = dateTimePicker2.getDatePicker();
+        TimePicker time1 = dateTimePicker2.getTimePicker();
+        String dt1 = date1+"/"+time1;
+        System.out.println(time0);
         System.out.println(fNumber);
-        System.out.println(date0);
-        System.out.println(date2);
+
         System.out.println(from);
         System.out.println(dest);
         System.out.println(fCost);
-        UpdateFlightDetails ufd = new UpdateFlightDetails(fNumber, date0, date2, from, dest, fCost);
+        UpdateFlightDetails ufd = new UpdateFlightDetails(fNumber, dt0, dt1, from, dest, fCost);
         UpdateFlightController ufc = new UpdateFlightController();
         int i = ufc.UpdateFlightDetails(ufd);
         if(i==1){
@@ -393,10 +408,10 @@ public class UpdateFlight extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.github.lgooddatepicker.components.DateTimePicker dateTimePicker1;
+    private com.github.lgooddatepicker.components.DateTimePicker dateTimePicker2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
