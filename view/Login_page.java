@@ -207,24 +207,17 @@ class Login_Page extends javax.swing.JFrame {
 
             stmt= conn.prepareStatement(sql);
             stmt.setString(1, jTextField2.getText());
-            stmt.setString(2, "admin"+jPasswordField1.getText());
+            stmt.setString(2, jPasswordField1.getText());
             r= stmt.executeQuery();
             System.out.println(jTextField2.getText());
 
             if(r.next())
             {
-                JOptionPane.showMessageDialog(this, "Login successfully");
+                JOptionPane.showMessageDialog(this, "LoggedIn successfully");
                 jTextField2.setText("");
                 jPasswordField1.setText("");
                 dispose();
-                String bol = register_guiDetails.getAdmin();
-                System.out.println(bol);
-                if (bol =="true"){
-                    new AdminHome().setVisible(true);
-                }
-                else{
-                    new Home().setVisible(true);
-                }
+                new Home().setVisible(true);    
             }
             else
             {

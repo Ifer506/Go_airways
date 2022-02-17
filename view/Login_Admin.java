@@ -217,7 +217,6 @@ class Login_Admin extends javax.swing.JFrame {
                 jPasswordField1.setText("");
                 dispose();
                 new Home().setVisible(true);
-                
             }
             else
             {
