@@ -10,12 +10,13 @@ public class register_guiDetails {
     private static String cPassword;
     private static String gender;
     private static String date;
+    private static String admin;
 
     public register_guiDetails(){
 
     }
 
-    public register_guiDetails(String fName,String lName ,String userName,String eMail,String pNumber, String password, String cPassword, String gender, String date){
+    public register_guiDetails(String fName,String lName ,String userName,String eMail,String pNumber, String password, String cPassword, String gender, String date, String admin){
         register_guiDetails.fName = fName;
         register_guiDetails.lName = lName;
         register_guiDetails.userName  = userName;
@@ -25,6 +26,7 @@ public class register_guiDetails {
         register_guiDetails.cPassword = cPassword;
         register_guiDetails.gender = gender;
         register_guiDetails.date = date;
+        register_guiDetails.admin = admin;
     }
     public static String getFName() {
         return fName;
@@ -106,5 +108,14 @@ public class register_guiDetails {
    
     public void setDate(String date) {
         register_guiDetails.date = date;
+    }
+
+    public static String getAdmin() {
+        return admin;
+    }
+
+   
+    public void setAdmin(String admin) {
+        register_guiDetails.admin = admin;
     }
 }
