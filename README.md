@@ -1,4 +1,4 @@
 # Go_airways
-In this branch, we have worked on login and registration page.
-Here we have also uploaded a database file connected to the registration.
+In this branch, we have worked on login and registration page using java language and designed with netbeans.
+
 GO AIRWAYS ✈️✈️
