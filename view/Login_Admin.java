@@ -25,7 +25,6 @@ class Login_Admin extends javax.swing.JFrame {
     public Login_Admin() {
         initComponents();
         setLocationRelativeTo(null);
-        kButton2.setVisible(false);
     }
 
     /**
@@ -77,7 +76,7 @@ class Login_Admin extends javax.swing.JFrame {
 
         kButton2.setBackground(new java.awt.Color(255, 204, 0));
         kButton2.setForeground(new java.awt.Color(0, 0, 0));
-        kButton2.setText("SignUp");
+        kButton2.setText("LogIn as Customer");
         kButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 kButton2ActionPerformed(evt);
@@ -216,7 +215,7 @@ class Login_Admin extends javax.swing.JFrame {
                 jTextField2.setText("");
                 jPasswordField1.setText("");
                 dispose();
-                new Home().setVisible(true);
+                new AdminHome().setVisible(true);
             }
             else
             {
@@ -230,11 +229,11 @@ class Login_Admin extends javax.swing.JFrame {
 
     }
     private void kButton2ActionPerformed(java.awt.event.ActionEvent evt){
-        this.setVisible(false);
-        new register_gui().setVisible(true);
+        dispose();
+        new Login_Page().setVisible(true);
     }
     private void kButton3ActionPerformed(java.awt.event.ActionEvent evt){
-        this.setVisible(false);
+        dispose();
     }
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {

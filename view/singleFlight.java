@@ -12,7 +12,9 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
 
+import controller.travellersController;
 import model.singleDetails;
+import model.travellers;
 
 
 /**
@@ -133,7 +135,8 @@ public class singleFlight extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String flightNumber = singleDetails.getFlightNumber();     
+        String flightNumber = travellers.getTravel();
+        System.out.println(flightNumber);     
         if(flightNumber=="1"){
                 dispose();
                 new AfterTicket().setVisible(true);

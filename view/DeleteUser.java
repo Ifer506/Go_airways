@@ -37,7 +37,7 @@ public class DeleteUser extends javax.swing.JFrame {
             Connection con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/FMS?characterEncoding=utf8&useSSL=false&autoReconnect=true",
                     username, password);
-            String query1 = "SELECT * from AddUser";
+            String query1 = "SELECT fName,lName,uName,eMail,pNumber,gender,date from register_gui";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(query1);
             ResultSetMetaData rsmd = rs.getMetaData();

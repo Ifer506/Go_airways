@@ -68,6 +68,11 @@ public class AfterDetails extends javax.swing.JDialog {
         proceedBtn.setBackground(new java.awt.Color(34, 40, 44));
         proceedBtn.setForeground(new java.awt.Color(197, 148, 27));
         proceedBtn.setText("Proceed");
+        proceedBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(197, 148, 27));
